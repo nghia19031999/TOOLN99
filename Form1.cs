@@ -86,27 +86,231 @@ namespace BMD2
         {
             try
             {
-                for(int k =0; k < 5; k++)
-                {
-                    var NAME = File.ReadAllLines("NAMEWHATAPP.txt").ToList();
+                string username1 = "";
+                string passig1 = "";
+
+                var kytu_bangchucai = File.ReadAllLines("bangchucai.txt").ToList();
+                Random rndbangchucai = new Random();
+                int indexRandom_bangchucai = rndbangchucai.Next(0, kytu_bangchucai.Count);
+                int indexRandom_bangchucai1 = rndbangchucai.Next(0, kytu_bangchucai.Count);
+                int indexRandom_bangchucai2 = rndbangchucai.Next(0, kytu_bangchucai.Count);
+
+                Random rd_number1 = new Random();
+                int randomNumber1 = rd_number1.Next(1, 10);
+                int randomNumber2 = rd_number1.Next(1, 10);
+
+
+                var firstname = File.ReadAllLines("firstname.txt").ToList();
                     Random rnd = new Random();
-                    int indexRandom = rnd.Next(0, NAME.Count);
-                    string name_WhatApp = NAME[indexRandom];
-                    if (string.IsNullOrEmpty(name_WhatApp))
+                    int indexRandom = rnd.Next(0, firstname.Count);
+                    var lastname = File.ReadAllLines("lastname.txt").ToList();
+                    Random rnd_1 = new Random();
+                    int indexRandom_1 = rnd_1.Next(0, lastname.Count);
+
+
+                    var kytu = File.ReadAllLines("kytu.txt").ToList();
+                    Random rnd1 = new Random();
+                    int indexRandom1 = rnd1.Next(0, kytu.Count);
+
+
+                    Random rd = new Random();
+                    int randomNumber = rd.Next(1, 10000000);
+
+                    var kytudb = File.ReadAllLines("kytudb.txt").ToList();
+                    Random rndkt = new Random();
+                    int indexRandom_kt = rndkt.Next(0, kytudb.Count);
+
+                    var Kytupasss = File.ReadAllLines("kytupass.txt").ToList();
+                    Random rndktpass = new Random();
+                    int indexRandom_ktpasss = rndktpass.Next(0, Kytupasss.Count);
+
+                    var Kytunamedb = File.ReadAllLines("kutuname.txt").ToList();
+                    Random rndktnamedb = new Random();
+                    int indexRandom_ktnamedb = rndktnamedb.Next(0, Kytunamedb.Count);
+
+                    var kytuchuname = File.ReadAllLines("kytuchuname.txt").ToList();
+                    Random rndktnamechu = new Random();
+                    int indexRandom_ktnamechu = rndktnamechu.Next(0, kytuchuname.Count);
+
+                    Random rdname = new Random();
+                    int randomNumbername = rdname.Next(1, 100000);
+
+                    Random nameV = new Random();
+                    int NAME = nameV.Next(0, 4);
+                    if (NAME == 1)
                     {
-                        if (tb_NAME_WHATAPP.InvokeRequired)
+                        try
                         {
-                            tb_NAME_WHATAPP.Invoke(new Action(() =>
-                            {
-                                name_WhatApp = tb_NAME_WHATAPP.Text;
-                            }));
+
+                            string fullname = firstname[indexRandom] + " " + lastname[indexRandom_1];
+
+
+
+                   
 
                         }
-                    }
-                    name_WhatApp = name_WhatApp + $"{k + 1}";
+                        catch { }
 
-                }
+
+
+                        username1 = firstname[indexRandom].ToLower() + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+
+
+                        Thread.Sleep(5000);
+                        Random passs = new Random();
+                        int PASSS = passs.Next(0, 2);
+                        if (PASSS == 1)
+                        {
+                            passig1 = firstname[indexRandom].ToLower() + Kytupasss[indexRandom_ktpasss] + randomNumber;
+                        }
+                        else
+                        {
+                            passig1 = firstname[indexRandom].ToLower() + kytu[indexRandom1] + randomNumber;
+                        }
+
+               
+
+
+
+
+                    }
+                    if (NAME == 2)
+                    {
+                        try
+                        {
+                            string fullname = firstname[indexRandom] + " " + lastname[indexRandom_1];
+
+                   
+
+                        }
+                        catch { }
+
+                        Random namedb = new Random();
+                        int NAMEDB = namedb.Next(0, 4);
+                        if (NAMEDB == 1)
+                        {
+                            username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                        }
+                        if (NAMEDB == 2)
+                        {
+                            username1 = firstname[indexRandom] + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                        }
+                        if (NAMEDB == 0)
+                        {
+                            username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                        }
+                        if (NAMEDB == 3)
+                        {
+                            username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai2];
+                        }
+
+
+
+             
+
+                        Thread.Sleep(5000);
+                        Random passs = new Random();
+                        int PASSS = passs.Next(0, 2);
+                        if (PASSS == 1)
+                        {
+                            passig1 = firstname[indexRandom].ToLower() + Kytupasss[indexRandom_ktpasss] + randomNumber;
+                        }
+                        else
+                        {
+                            passig1 = firstname[indexRandom].ToLower() + kytu[indexRandom1];
+                        }
+
           
+                   
+                        Thread.Sleep(5000);
+
+
+
+                    }
+                    if (NAME == 0)
+                    {
+                        try
+                        {
+                            string fullname = firstname[indexRandom];
+
+                        
+                        }
+                        catch { }
+                        username1 = firstname[indexRandom] + "." + lastname[indexRandom_1].ToLower() + randomNumber;
+                  
+                        Thread.Sleep(5000);
+                        Random passs = new Random();
+                        int PASSS = passs.Next(0, 2);
+                        if (PASSS == 1)
+                        {
+                            passig1 = firstname[indexRandom].ToLower() + Kytupasss[indexRandom_ktpasss] + randomNumber;
+                        }
+                        else
+                        {
+                            passig1 = firstname[indexRandom].ToLower() + kytu[indexRandom1] + randomNumber;
+                        }
+
+                    }
+                    if (NAME == 3)
+                    {
+                        try
+                        {
+                            string fullname = firstname[indexRandom] + " " + lastname[indexRandom_1];
+
+
+                        }
+                        catch { }
+
+                        Random namedb = new Random();
+                        int NAMEDB = namedb.Next(0, 4);
+                        if (NAMEDB == 1)
+                        {
+                            username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                        }
+                        if (NAMEDB == 2)
+                        {
+                            username1 = firstname[indexRandom] + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                        }
+                        if (NAMEDB == 0)
+                        {
+                            username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                        }
+                        if (NAMEDB == 3)
+                        {
+                            username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                        }
+
+
+
+                        Thread.Sleep(5000);
+                        Random passs = new Random();
+                        int PASSS = passs.Next(0, 2);
+                        if (PASSS == 1)
+                        {
+                            passig1 = firstname[indexRandom].ToLower() + Kytupasss[indexRandom_ktpasss] + randomNumber;
+                        }
+                        else
+                        {
+                            passig1 = firstname[indexRandom].ToLower() + kytu[indexRandom1];
+                        }
+
+                   
+                    
+                        Thread.Sleep(5000);
+
+
+
+                    }
+
+             
+
+                
+     
+
+
+
+
+
             }
             catch { }
 
@@ -1338,6 +1542,68 @@ namespace BMD2
 
         private void Status()
         {
+            //NO RANDOM 
+            cmb_NO_RANDOM.Items.Add("ON");
+            cmb_NO_RANDOM.Items.Add("OFF");
+            cmb_NO_RANDOM.SelectedItem = "ON";
+            // RANDOM TÊN IG 4-17
+            cmb_Random4_17.Items.Add("ON");
+            cmb_Random4_17.Items.Add("OFF");
+            cmb_Random4_17.SelectedItem="ON";
+
+            // ĐẶT TÊN IG
+            cmb_dinh_dang_ten.Items.Add("1|1|name+lastname+kytu+1000000");
+            cmb_dinh_dang_ten.Items.Add("1|2|name+lastname+kytu+so1+kytu1+so2+kytu2");
+            cmb_dinh_dang_ten.Items.Add("2|1|firstname+.+lastname+kytu+1000000");
+            cmb_dinh_dang_ten.Items.Add("2|2|Firstname+.+lastname+kytudb+so+kytudb");
+            cmb_dinh_dang_ten.Items.Add("2|3|firstname+.+lastname+kytudb+so+kytudb");
+            cmb_dinh_dang_ten.Items.Add("2|4|firstname+.+lastname+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("2|5|firstname+.+lastname+.+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("2|6|firstname+.+lastname+_+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("2|7|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("2|8|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("2|9|firstname+.+lastname+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("2|10|firstname+.+lastname+.+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("2|11|firstname+.+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("2|12|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("2|13|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("2|14|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("2|15|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100");
+            cmb_dinh_dang_ten.Items.Add("2|16|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100");
+            cmb_dinh_dang_ten.Items.Add("2|17|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100");
+            cmb_dinh_dang_ten.Items.Add("2|18|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100");
+            cmb_dinh_dang_ten.Items.Add("2|19|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1");
+            cmb_dinh_dang_ten.Items.Add("2|20|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1");
+            cmb_dinh_dang_ten.Items.Add("2|21|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1");
+            cmb_dinh_dang_ten.Items.Add("2|22|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3");
+            cmb_dinh_dang_ten.Items.Add("2|23|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3");
+            cmb_dinh_dang_ten.Items.Add("2|24|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3");
+            cmb_dinh_dang_ten.Items.Add("0|1|Firstname+.+lastname+1000000");
+            cmb_dinh_dang_ten.Items.Add("3|1|firstname+_+lastname+kytu+1000000");
+            cmb_dinh_dang_ten.Items.Add("3|2|Firstname+_+lastname+kytudb+so+kytudb");
+            cmb_dinh_dang_ten.Items.Add("3|3|firstname+_+lastname+kytudb+so+kytudb");
+            cmb_dinh_dang_ten.Items.Add("3|4|firstname+_+lastname+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("3|5|firstname+_+lastname+_+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("3|6|firstname+_+lastname+.+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("3|7|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("3|8|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("3|9|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("3|10|firstname+_+lastname+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("3|11|firstname+_+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("3|12|firstname+_+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("3|13|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("3|14|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("3|15|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2");
+            cmb_dinh_dang_ten.Items.Add("3|16|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100");
+            cmb_dinh_dang_ten.Items.Add("3|17|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100");
+            cmb_dinh_dang_ten.Items.Add("3|18|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100");
+            cmb_dinh_dang_ten.Items.Add("3|19|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1");
+            cmb_dinh_dang_ten.Items.Add("3|20|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1");
+            cmb_dinh_dang_ten.Items.Add("3|21|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1");
+            cmb_dinh_dang_ten.Items.Add("3|22|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3");
+            cmb_dinh_dang_ten.Items.Add("3|23|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3");
+            cmb_dinh_dang_ten.Items.Add("3|24|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3");
+            cmb_dinh_dang_ten.SelectedItem = "2|4|firstname+.+lastname+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2";
             // BO BM_DIE
             cmb_bo_DIE.Items.Add("ON");
             cmb_bo_DIE.Items.Add("OFF");
@@ -1420,7 +1686,7 @@ namespace BMD2
             cmb_Tao_5BM_IG.SelectedItem = "5";
 
             // FILE CẦN MỞ
-
+            cmb_FILE_OPEN.Items.Add("chon_random_ig.txt");
             cmb_FILE_OPEN.Items.Add("AccountIGREG.txt");
             cmb_FILE_OPEN.Items.Add("LINKBM350THU3.txt");
             cmb_FILE_OPEN.Items.Add("LINKBM50THU3.txt");
@@ -1434,6 +1700,41 @@ namespace BMD2
             cmb_FILE_OPEN.Items.Add("Mailnhanbm50.txt");
             cmb_FILE_OPEN.Items.Add("Mailnhanbm350.txt");
             cmb_FILE_OPEN.Items.Add("NAMEWHATAPP.txt");
+            cmb_FILE_OPEN.Items.Add("firstname.txt");
+            cmb_FILE_OPEN.Items.Add("lastname.txt");
+            cmb_FILE_OPEN.Items.Add("Ho.txt");
+            cmb_FILE_OPEN.Items.Add("HoAnDo.txt");
+            cmb_FILE_OPEN.Items.Add("HoCampuchia.txt");
+            cmb_FILE_OPEN.Items.Add("HoHanQuoc.txt");
+            cmb_FILE_OPEN.Items.Add("HoThaiLan.txt");
+            cmb_FILE_OPEN.Items.Add("kytu.txt");
+            cmb_FILE_OPEN.Items.Add("kytuchuname.txt");
+            cmb_FILE_OPEN.Items.Add("Ten.txt");
+            cmb_FILE_OPEN.Items.Add("TenAnDo.txt");
+            cmb_FILE_OPEN.Items.Add("TenCampuchia.txt");
+            cmb_FILE_OPEN.Items.Add("TenHanQuoc.txt");
+            cmb_FILE_OPEN.Items.Add("TenThaiLan.txt");
+            cmb_FILE_OPEN.Items.Add("bangchucai.txt");
+
+            // FILE RANDOM
+            cmb_file_random.Items.Add("firstname.txt");
+            cmb_file_random.Items.Add("lastname.txt");
+            cmb_file_random.Items.Add("Ho.txt");
+            cmb_file_random.Items.Add("HoAnDo.txt");
+            cmb_file_random.Items.Add("HoCampuchia.txt");
+            cmb_file_random.Items.Add("HoHanQuoc.txt");
+            cmb_file_random.Items.Add("HoThaiLan.txt");
+            cmb_file_random.Items.Add("kytu.txt");
+            cmb_file_random.Items.Add("kytuchuname.txt");
+            cmb_file_random.Items.Add("Ten.txt");
+            cmb_file_random.Items.Add("TenAnDo.txt");
+            cmb_file_random.Items.Add("TenCampuchia.txt");
+            cmb_file_random.Items.Add("TenHanQuoc.txt");
+            cmb_file_random.Items.Add("TenThaiLan.txt");
+            cmb_file_random.Items.Add("bangchucai.txt");
+
+
+
             //UP WEB
             cmb_UP_WEB.Items.Add("ON");
             cmb_UP_WEB.Items.Add("OFF");
@@ -1767,8 +2068,71 @@ namespace BMD2
             cmb_API_CHROME_BACK_UP_BM_THEO_ID.Items.Add("API");
             cmb_API_CHROME_BACK_UP_BM_THEO_ID.Items.Add("CHROME");
             cmb_API_CHROME_BACK_UP_BM_THEO_ID.SelectedItem = "CHROME";
-        }
 
+            // CHECK_INFOR
+            cmb_Check_Infor_BM.Items.Add("ON");
+            cmb_Check_Infor_BM.Items.Add("OFF");
+            cmb_Check_Infor_BM.SelectedItem = "ON";
+
+            // BỎ CHECK BM3
+            cmb_bo_check1.Items.Add("ON");
+            cmb_bo_check1.Items.Add("OFF");
+            cmb_bo_check1.SelectedItem = "ON";
+
+            // WA
+
+            cmb_ttk_5_1_WA.Items.Add("WA1");
+            cmb_ttk_5_1_WA.Items.Add("WA5");
+            cmb_ttk_5_1_WA.SelectedItem = "WA1";
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                // 🔹 Lấy tên file từ combobox
+                string namefile = cmb_file_random.Text.Trim();
+                if (string.IsNullOrEmpty(namefile) || !File.Exists(namefile))
+                {
+                    MessageBox.Show("Vui lòng chọn file hợp lệ trong ComboBox!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                // 🔹 Đọc toàn bộ dòng trong file
+                var lines = File.ReadAllLines(namefile)
+                                .Select(l => l.Trim())          // loại bỏ khoảng trắng đầu/cuối dòng
+                                .Where(l => !string.IsNullOrEmpty(l)) // loại bỏ dòng trống
+                                .Distinct()                     // loại bỏ trùng lặp
+                                .ToList();
+
+                if (lines.Count == 0)
+                {
+                    MessageBox.Show("File trống sau khi lọc, không có dòng nào để xáo trộn!",
+                                    "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+
+                // 🔹 Thực hiện xáo trộn (Fisher–Yates)
+                var rnd = new Random();
+                for (int i = lines.Count - 1; i > 0; i--)
+                {
+                    int j = rnd.Next(i + 1);
+                    (lines[i], lines[j]) = (lines[j], lines[i]);
+                }
+
+                // 🔹 Ghi đè file cũ
+                File.WriteAllLines(namefile, lines);
+
+                // 🔹 Thông báo thành công
+                MessageBox.Show($"✅ Đã xáo trộn {lines.Count} dòng (đã loại bỏ khoảng trắng và trùng lặp) và ghi đè lên file:\n{namefile}",
+                                "Hoàn tất", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi xáo trộn file:\n{ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
         private bool isStop = false;
         private void btn_RUN_Click(object sender, EventArgs e)
         {
@@ -2177,27 +2541,29 @@ namespace BMD2
                     var mail_share1 = mail_n.Split('|')[0].ToString();
                     var pass_mail_1 = mail_n.Split('|')[1].ToString();
                     var mailkhoiphuc = mail_n.Split('|')[2].ToString();
+                    var accessToken = mail_n.Split('|')[3].ToString();
+                    var refreshToken = "";
                     // Tạo task xử lý cho mỗi email
                     var task = new Task(() =>
                     {
                         try
                         {
-                            var (username1, password1, accessToken, refreshToken) = TurnOnOAUTH2_BM_IG(mail_share1, pass_mail_1, mailkhoiphuc);
+                            //var (username1, password1, accessToken, refreshToken) = TurnOnOAUTH2_BM_IG(mail_share1, pass_mail_1, mailkhoiphuc);
+                            ////if (string.IsNullOrEmpty(accessToken))
+                            ////{
+                            ////    Task.Delay(TimeSpan.FromSeconds(5)).Wait();
+                            ////    (username1, password1, accessToken, refreshToken) = TurnOnOAUTH2(mail_share1, pass_mail_1);
+                            ////}
                             //if (string.IsNullOrEmpty(accessToken))
                             //{
                             //    Task.Delay(TimeSpan.FromSeconds(5)).Wait();
-                            //    (username1, password1, accessToken, refreshToken) = TurnOnOAUTH2(mail_share1, pass_mail_1);
+                            //    (username1, password1, accessToken, refreshToken) = TurnOnOAUTH2_BM_IG(mail_share1, pass_mail_1,mailkhoiphuc);
                             //}
-                            if (string.IsNullOrEmpty(accessToken))
-                            {
-                                Task.Delay(TimeSpan.FromSeconds(5)).Wait();
-                                (username1, password1, accessToken, refreshToken) = TurnOnOAUTH2_BM_IG(mail_share1, pass_mail_1,mailkhoiphuc);
-                            }
-                            if (string.IsNullOrEmpty(accessToken))
-                            {
-                                Task.Delay(TimeSpan.FromSeconds(5)).Wait();
-                                (username1, password1, accessToken, refreshToken) = TurnOnOAUTH2_BM_IG(mail_share1, pass_mail_1, mailkhoiphuc);
-                            }
+                            //if (string.IsNullOrEmpty(accessToken))
+                            //{
+                            //    Task.Delay(TimeSpan.FromSeconds(5)).Wait();
+                            //    (username1, password1, accessToken, refreshToken) = TurnOnOAUTH2_BM_IG(mail_share1, pass_mail_1, mailkhoiphuc);
+                            //}
 
                             // Lấy Link từ tài khoản email
                             Link1 = GetLinkBm_IG(mail_share1, pass_mail_1, accessToken, refreshToken);
@@ -9428,7 +9794,7 @@ namespace BMD2
         private List<string> ListoriginalTab; // Khai báo danh sách tab toàn cục
         private List<string> originalTabchinh;
 
-    
+      
         private void REG_IG(DataGridViewRow row, string uid, string password, string c2FAvsCookie, string mail, string passmail, string mailkhoiphuc)
         {
 
@@ -10764,9 +11130,45 @@ namespace BMD2
 
                 string username1 = "";
                 string passig1 = "";
-      
-               if (VN_US == "US")
+
+                var mac_dinh_name = "";
+                if (cmb_dinh_dang_ten.InvokeRequired)
+                {
+                    cmb_dinh_dang_ten.Invoke(new Action(() =>
+                    {
+                        mac_dinh_name = cmb_dinh_dang_ten.Text;
+                    }));
+
+                }
+                var RANDOM_4_17 = "";
+                if (cmb_Random4_17.InvokeRequired)
+                {
+                    cmb_Random4_17.Invoke(new Action(() =>
+                    {
+                        RANDOM_4_17 = cmb_Random4_17.Text;
+                    }));
+
+                }
+
+
+                if (VN_US == "US")
                {
+                    var kytu_abcchucai = File.ReadAllLines("abcchucai.txt").ToList();
+                    Random rndabcchucai = new Random();
+                    int indexRandom_abcchucai = rndabcchucai.Next(0, kytu_abcchucai.Count);
+                    int indexRandom_abcchucai1 = rndabcchucai.Next(0, kytu_abcchucai.Count);
+
+                    var kytu_bangchucai = File.ReadAllLines("bangchucai.txt").ToList();
+                    Random rndbangchucai = new Random();
+                    int indexRandom_bangchucai = rndbangchucai.Next(0, kytu_bangchucai.Count);
+                    int indexRandom_bangchucai1 = rndbangchucai.Next(0, kytu_bangchucai.Count);
+                    int indexRandom_bangchucai2 = rndbangchucai.Next(0, kytu_bangchucai.Count);
+
+                    Random rd_number1 = new Random();
+                    int randomNumber1 = rd_number1.Next(1, 10);
+                    int randomNumber2 = rd_number1.Next(1, 10);
+                    int randomNumber3 = rd_number1.Next(10, 100);
+
                     var firstname = File.ReadAllLines("firstname.txt").ToList();
                     Random rnd = new Random();
                     int indexRandom = rnd.Next(0, firstname.Count);
@@ -10778,6 +11180,8 @@ namespace BMD2
                     var kytu = File.ReadAllLines("kytu.txt").ToList();
                     Random rnd1 = new Random();
                     int indexRandom1 = rnd1.Next(0, kytu.Count);
+
+
                     Random rd = new Random();
                     int randomNumber = rd.Next(1, 10000000);
 
@@ -10800,9 +11204,42 @@ namespace BMD2
                     Random rdname = new Random();
                     int randomNumbername = rdname.Next(1, 100000);
 
-                    Random nameV = new Random();
-                    int NAME = nameV.Next(0, 4);
-                    if (NAME == 1)
+                    var NAME = "";
+                    if (RANDOM_4_17 == "OFF")
+                    {
+                        var NO_RANDOM = "";
+                        if (cmb_NO_RANDOM.InvokeRequired) 
+                        { 
+                            cmb_NO_RANDOM.Invoke(new Action(() =>
+                            {
+                                NO_RANDOM = cmb_NO_RANDOM.Text;
+                            }));
+
+                        }
+                        if (NO_RANDOM == "OFF")
+                        {
+                            var name_ig_file = File.ReadAllLines("chon_random_ig.txt").ToList();
+                            Random rndname_ig_file = new Random();
+                            int indexRandom_name_ig_file = rndname_ig_file.Next(0, name_ig_file.Count);
+
+                            mac_dinh_name = name_ig_file[indexRandom_name_ig_file];
+                            NAME = mac_dinh_name.Split('|')[0];
+                        }
+                        else
+                        {
+                            NAME = mac_dinh_name.Split('|')[0];
+                        }
+                     
+
+
+                    }
+                    if (RANDOM_4_17 == "ON")
+                    {
+                        NAME = mac_dinh_name.Split('|')[0];
+                    }
+           
+
+                    if (NAME == "1")
                     {
                         try
                         {
@@ -10822,8 +11259,17 @@ namespace BMD2
                         catch { }
 
 
+                        if(mac_dinh_name== "1|1|name+lastname+kytu+1000000")
+                        {
+                            username1 = firstname[indexRandom].ToLower() + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                        }
+                        else
+                        {
+                            username1 = firstname[indexRandom].ToLower() + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                        }
+                      
 
-                        username1 = firstname[indexRandom].ToLower() + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+
                         IWebElement btnUserName = chromedriver.FindElement(By.Name("username"));
                         //btnUserName.SendKeys(username1);
                         enter_name_pass_IG(username1, 20, btnUserName);
@@ -10850,7 +11296,7 @@ namespace BMD2
 
 
                     }
-                    if (NAME == 2)
+                    if (NAME == "2")
                     {
                         try
                         {
@@ -10866,21 +11312,195 @@ namespace BMD2
                         }
                         catch { }
 
-                        Random namedb = new Random();
-                        int NAMEDB = namedb.Next(0, 3);
-                        if (NAMEDB == 1)
+                        //Random namedb = new Random();
+                        //int NAMEDB = namedb.Next(0, 4);
+                    
+
+                        if (RANDOM_4_17 == "ON")
                         {
-                            username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            Random namedb = new Random();
+                            int NAMEDB = namedb.Next(0, 20);
+                            if (NAMEDB == 0)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 1)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 2)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 3)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 4)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 5)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 6)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 7)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 8)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 9)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 10)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 11)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 12)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 13)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 14)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 15)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 16)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 17)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 18)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 19)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
-                        if (NAMEDB == 2)
+                        else
                         {
-                            username1 = firstname[indexRandom] + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            if (mac_dinh_name == "2|1|firstname+.+lastname+kytu+1000000")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            if (mac_dinh_name == "2|2|Firstname+.+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom] + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "2|3|firstname+.+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "2|4|firstname+.+lastname+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|5|firstname+.+lastname+.+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|6|firstname+.+lastname+_+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|7|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|8|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|9|firstname+.+lastname+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|10|firstname+.+lastname+.+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|11|firstname+.+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|12|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|13|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|14|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|15|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|16|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|17|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|18|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|19|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|20|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|21|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|22|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|23|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|24|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
-                        if (NAMEDB == 0)
-                        {
-                            username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
-                        }
-               
+
 
 
                         IWebElement btnUserName = chromedriver.FindElement(By.Name("username"));
@@ -10907,7 +11527,7 @@ namespace BMD2
 
 
                     }
-                    if (NAME == 0)
+                    if (NAME == "0")
                     {
                         try
                         {
@@ -10941,7 +11561,7 @@ namespace BMD2
                         enter_name_pass_IG(passig1, 20, btnpassig);
                         Thread.Sleep(5000);
                     }
-                    if (NAME == 3)
+                    if (NAME == "3")
                     {
                         try
                         {
@@ -10957,19 +11577,195 @@ namespace BMD2
                         }
                         catch { }
 
-                        Random namedb = new Random();
-                        int NAMEDB = namedb.Next(0, 3);
-                        if (NAMEDB == 1)
+                        //Random namedb = new Random();
+                        //int NAMEDB = namedb.Next(0, 4);
+                
+                     
+
+                        if (RANDOM_4_17 == "ON")
                         {
-                            username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            Random namedb = new Random();
+                            int NAMEDB = namedb.Next(0, 20);
+                            if (NAMEDB == 0)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai];
+                            }
+                            if (NAMEDB == 1)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 2)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 3)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 4)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 5)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 6)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 7)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 8)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 9)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 10)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 11)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 12)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 13)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 14)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 15)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 16)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 17)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 18)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 19)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
-                        if (NAMEDB == 2)
+                        else
                         {
-                            username1 = firstname[indexRandom] + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
-                        }
-                        if (NAMEDB == 0)
-                        {
-                            username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            if (mac_dinh_name == "3|1|firstname+_+lastname+kytu+1000000")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            if (mac_dinh_name == "3|2|Firstname+_+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom] + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "3|3|firstname+_+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "3|4|firstname+_+lastname+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai];
+                            }
+                            if (mac_dinh_name == "3|5|firstname+_+lastname+_+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|6|firstname+_+lastname+.+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|7|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|8|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() +"_"+ kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|9|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|10|firstname+_+lastname+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|11|firstname+_+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|12|firstname+_+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|13|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|14|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|15|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|16|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|17|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|18|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|19|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|20|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|21|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|22|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|23|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|24|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+
                         }
 
 
@@ -10998,7 +11794,7 @@ namespace BMD2
 
 
                     }
-
+                 
                     while (isStop)
                     {
                         Thread.Sleep(1000);
@@ -11008,6 +11804,22 @@ namespace BMD2
                }
                if (VN_US == "VN")
                 {
+                    var kytu_abcchucai = File.ReadAllLines("abcchucai.txt").ToList();
+                    Random rndabcchucai = new Random();
+                    int indexRandom_abcchucai = rndabcchucai.Next(0, kytu_abcchucai.Count);
+                    int indexRandom_abcchucai1 = rndabcchucai.Next(0, kytu_abcchucai.Count);
+
+                    var kytu_bangchucai = File.ReadAllLines("bangchucai.txt").ToList();
+                    Random rndbangchucai = new Random();
+                    int indexRandom_bangchucai = rndbangchucai.Next(0, kytu_bangchucai.Count);
+                    int indexRandom_bangchucai1 = rndbangchucai.Next(0, kytu_bangchucai.Count);
+                    int indexRandom_bangchucai2 = rndbangchucai.Next(0, kytu_bangchucai.Count);
+
+                    Random rd_number1 = new Random();
+                    int randomNumber1 = rd_number1.Next(1, 10);
+                    int randomNumber2 = rd_number1.Next(1, 10);
+                    int randomNumber3 = rd_number1.Next(10, 100);
+
                     var firstname = File.ReadAllLines("Ten.txt").ToList();
                     Random rnd = new Random();
                     int indexRandom = rnd.Next(0, firstname.Count);
@@ -11040,10 +11852,41 @@ namespace BMD2
 
                     Random rdname = new Random();
                     int randomNumbername = rdname.Next(1, 1000);
+                    var NAME = "";
+                    if (RANDOM_4_17 == "OFF")
+                    {
+                        var NO_RANDOM = "";
+                        if (cmb_NO_RANDOM.InvokeRequired)
+                        {
+                            cmb_NO_RANDOM.Invoke(new Action(() =>
+                            {
+                                NO_RANDOM = cmb_NO_RANDOM.Text;
+                            }));
 
-                    Random nameV = new Random();
-                    int NAME = nameV.Next(0, 4);
-                    if (NAME == 1)
+                        }
+                        if (NO_RANDOM == "OFF")
+                        {
+                            var name_ig_file = File.ReadAllLines("chon_random_ig.txt").ToList();
+                            Random rndname_ig_file = new Random();
+                            int indexRandom_name_ig_file = rndname_ig_file.Next(0, name_ig_file.Count);
+
+                            mac_dinh_name = name_ig_file[indexRandom_name_ig_file];
+                            NAME = mac_dinh_name.Split('|')[0];
+                        }
+                        else
+                        {
+                            NAME = mac_dinh_name.Split('|')[0];
+                        }
+
+
+
+                    }
+                    if (RANDOM_4_17 == "ON")
+                    {
+                        NAME = mac_dinh_name.Split('|')[0];
+                    }
+
+                    if (NAME == "1")
                     {
                         try
                         {
@@ -11055,7 +11898,14 @@ namespace BMD2
                                                                             //FULLName.SendKeys(fullname);
                             enter_name_pass_IG(fullname, 20, FULLName);
 
-                            username1 = lastname[indexRandom_1].ToLower() + firstname[indexRandom].ToLower() + kytu[indexRandom1] + randomNumber;
+                            if (mac_dinh_name == "1|1|name+lastname+kytu+1000000")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            else
+                            {
+                                username1 = firstname[indexRandom].ToLower() + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                             IWebElement btnUserName = chromedriver.FindElement(By.Name("username"));
                             //btnUserName.SendKeys(username1);
                             enter_name_pass_IG(username1, 20, btnUserName);
@@ -11078,7 +11928,7 @@ namespace BMD2
                         catch { }
 
                     }
-                    if (NAME == 2)
+                    if (NAME == "2")
                     {
 
                         try
@@ -11095,19 +11945,194 @@ namespace BMD2
                         }
                         catch { }
 
-                        Random namedb = new Random();
-                        int NAMEDB = namedb.Next(0, 3);
-                        if (NAMEDB == 1)
+                        //Random namedb = new Random();
+                        //int NAMEDB = namedb.Next(0, 4);
+
+
+
+                        if (RANDOM_4_17 == "ON")
                         {
-                            username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            Random namedb = new Random();
+                            int NAMEDB = namedb.Next(0, 20);
+                            if (NAMEDB == 0)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 1)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 2)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 3)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 4)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 5)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 6)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 7)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 8)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 9)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 10)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 11)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 12)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 13)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 14)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 15)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 16)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 17)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 18)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 19)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
-                        if (NAMEDB == 2)
+                        else
                         {
-                            username1 = firstname[indexRandom] + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
-                        }
-                        if (NAMEDB == 0)
-                        {
-                            username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            if (mac_dinh_name == "2|1|firstname+.+lastname+kytu+1000000")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            if (mac_dinh_name == "2|2|Firstname+.+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom] + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "2|3|firstname+.+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "2|4|firstname+.+lastname+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|5|firstname+.+lastname+.+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|6|firstname+.+lastname+_+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|7|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|8|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|9|firstname+.+lastname+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|10|firstname+.+lastname+.+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|11|firstname+.+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|12|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|13|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|14|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|15|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|16|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|17|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|18|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|19|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|20|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|21|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|22|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|23|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|24|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
                         IWebElement btnUserName = chromedriver.FindElement(By.Name("username"));
                         //btnUserName.SendKeys(username1);
@@ -11130,7 +12155,7 @@ namespace BMD2
                         Thread.Sleep(5000);
 
                     }
-                    if (NAME == 0)
+                    if (NAME == "0")
                     {
                         string fullname = lastname[indexRandom_1].ToLower() + firstname[indexRandom].ToLower();
 
@@ -11160,7 +12185,7 @@ namespace BMD2
                         //btnpassig.SendKeys(passig1);
                         enter_name_pass_IG(passig1, 20, btnpassig);
                     }
-                    if (NAME == 3)
+                    if (NAME == "3")
                     {
                         try
                         {
@@ -11176,19 +12201,195 @@ namespace BMD2
                         }
                         catch { }
 
-                        Random namedb = new Random();
-                        int NAMEDB = namedb.Next(0, 3);
-                        if (NAMEDB == 1)
+                        //Random namedb = new Random();
+                        //int NAMEDB = namedb.Next(0, 3);
+
+
+
+                        if (RANDOM_4_17 == "ON")
                         {
-                            username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            Random namedb = new Random();
+                            int NAMEDB = namedb.Next(0, 20);
+                            if (NAMEDB == 0)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai];
+                            }
+                            if (NAMEDB == 1)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 2)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 3)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 4)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 5)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 6)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 7)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 8)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 9)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 10)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 11)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 12)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 13)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 14)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 15)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 16)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 17)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 18)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 19)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
-                        if (NAMEDB == 2)
+                        else
                         {
-                            username1 = firstname[indexRandom] + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
-                        }
-                        if (NAMEDB == 0)
-                        {
-                            username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            if (mac_dinh_name == "3|1|firstname+_+lastname+kytu+1000000")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            if (mac_dinh_name == "3|2|Firstname+_+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom] + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "3|3|firstname+_+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "3|4|firstname+_+lastname+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai];
+                            }
+                            if (mac_dinh_name == "3|5|firstname+_+lastname+_+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|6|firstname+_+lastname+.+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|7|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|8|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|9|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|10|firstname+_+lastname+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|11|firstname+_+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|12|firstname+_+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|13|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|14|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|15|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|16|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|17|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|18|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|19|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|20|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|21|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|22|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|23|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|24|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+
                         }
 
 
@@ -11228,6 +12429,23 @@ namespace BMD2
                 }
                if (VN_US == "INDIA")
                 {
+
+                    var kytu_abcchucai = File.ReadAllLines("abcchucai.txt").ToList();
+                    Random rndabcchucai = new Random();
+                    int indexRandom_abcchucai = rndabcchucai.Next(0, kytu_abcchucai.Count);
+                    int indexRandom_abcchucai1 = rndabcchucai.Next(0, kytu_abcchucai.Count);
+
+                    var kytu_bangchucai = File.ReadAllLines("bangchucai.txt").ToList();
+                    Random rndbangchucai = new Random();
+                    int indexRandom_bangchucai = rndbangchucai.Next(0, kytu_bangchucai.Count);
+                    int indexRandom_bangchucai1 = rndbangchucai.Next(0, kytu_bangchucai.Count);
+                    int indexRandom_bangchucai2 = rndbangchucai.Next(0, kytu_bangchucai.Count);
+
+                    Random rd_number1 = new Random();
+                    int randomNumber1 = rd_number1.Next(1, 10);
+                    int randomNumber2 = rd_number1.Next(1, 10);
+                    int randomNumber3 = rd_number1.Next(10, 100);
+
                     var firstname = File.ReadAllLines("TenAnDo.txt").ToList();
                     Random rnd = new Random();
                     int indexRandom = rnd.Next(0, firstname.Count);
@@ -11261,9 +12479,41 @@ namespace BMD2
                     Random rdname = new Random();
                     int randomNumbername = rdname.Next(1, 1000);
 
-                    Random nameV = new Random();
-                    int NAME = nameV.Next(0, 4);
-                    if (NAME == 1)
+                    var NAME = "";
+                    if (RANDOM_4_17 == "OFF")
+                    {
+                        var NO_RANDOM = "";
+                        if (cmb_NO_RANDOM.InvokeRequired)
+                        {
+                            cmb_NO_RANDOM.Invoke(new Action(() =>
+                            {
+                                NO_RANDOM = cmb_NO_RANDOM.Text;
+                            }));
+
+                        }
+                        if (NO_RANDOM == "OFF")
+                        {
+                            var name_ig_file = File.ReadAllLines("chon_random_ig.txt").ToList();
+                            Random rndname_ig_file = new Random();
+                            int indexRandom_name_ig_file = rndname_ig_file.Next(0, name_ig_file.Count);
+
+                            mac_dinh_name = name_ig_file[indexRandom_name_ig_file];
+                            NAME = mac_dinh_name.Split('|')[0];
+                        }
+                        else
+                        {
+                            NAME = mac_dinh_name.Split('|')[0];
+                        }
+
+
+
+                    }
+                    if (RANDOM_4_17 == "ON")
+                    {
+                        NAME = mac_dinh_name.Split('|')[0];
+                    }
+
+                    if (NAME == "1")
                     {
                         try
                         {
@@ -11275,7 +12525,14 @@ namespace BMD2
                                                                             //FULLName.SendKeys(fullname);
                             enter_name_pass_IG(fullname, 20, FULLName);
 
-                            username1 = lastname[indexRandom_1].ToLower() + firstname[indexRandom].ToLower() + kytu[indexRandom1] + randomNumber;
+                            if (mac_dinh_name == "1|1|name+lastname+kytu+1000000")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            else
+                            {
+                                username1 = firstname[indexRandom].ToLower() + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                             IWebElement btnUserName = chromedriver.FindElement(By.Name("username"));
                             //btnUserName.SendKeys(username1);
                             enter_name_pass_IG(username1, 20, btnUserName);
@@ -11298,7 +12555,7 @@ namespace BMD2
                         catch { }
 
                     }
-                    if (NAME == 2)
+                    if (NAME == "2")
                     {
 
                         try
@@ -11315,19 +12572,192 @@ namespace BMD2
                         }
                         catch { }
 
-                        Random namedb = new Random();
-                        int NAMEDB = namedb.Next(0, 3);
-                        if (NAMEDB == 1)
+                        //Random namedb = new Random();
+                        //int NAMEDB = namedb.Next(0, 4);
+
+                        if (RANDOM_4_17 == "ON")
                         {
-                            username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            Random namedb = new Random();
+                            int NAMEDB = namedb.Next(0, 20);
+                            if (NAMEDB == 0)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 1)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 2)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 3)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 4)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 5)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 6)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 7)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 8)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 9)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 10)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 11)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 12)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 13)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 14)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 15)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 16)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 17)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 18)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 19)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
-                        if (NAMEDB == 2)
+                        else
                         {
-                            username1 = firstname[indexRandom] + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
-                        }
-                        if (NAMEDB == 0)
-                        {
-                            username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            if (mac_dinh_name == "2|1|firstname+.+lastname+kytu+1000000")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            if (mac_dinh_name == "2|2|Firstname+.+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom] + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "2|3|firstname+.+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "2|4|firstname+.+lastname+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|5|firstname+.+lastname+.+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|6|firstname+.+lastname+_+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|7|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|8|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|9|firstname+.+lastname+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|10|firstname+.+lastname+.+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|11|firstname+.+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|12|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|13|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|14|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|15|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|16|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|17|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|18|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|19|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|20|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|21|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|22|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|23|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|24|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
                         IWebElement btnUserName = chromedriver.FindElement(By.Name("username"));
                         //btnUserName.SendKeys(username1);
@@ -11350,7 +12780,7 @@ namespace BMD2
                         Thread.Sleep(5000);
 
                     }
-                    if (NAME == 0)
+                    if (NAME == "0")
                     {
                         string fullname = lastname[indexRandom_1].ToLower() + firstname[indexRandom].ToLower();
 
@@ -11380,7 +12810,7 @@ namespace BMD2
                         //btnpassig.SendKeys(passig1);
                         enter_name_pass_IG(passig1, 20, btnpassig);
                     }
-                    if (NAME == 3)
+                    if (NAME == "3")
                     {
                         try
                         {
@@ -11396,20 +12826,198 @@ namespace BMD2
                         }
                         catch { }
 
-                        Random namedb = new Random();
-                        int NAMEDB = namedb.Next(0, 3);
-                        if (NAMEDB == 1)
+                        //Random namedb = new Random();
+                        //int NAMEDB = namedb.Next(0, 3);
+
+
+
+                        if (RANDOM_4_17 == "ON")
                         {
-                            username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            Random namedb = new Random();
+                            int NAMEDB = namedb.Next(0, 20);
+                            if (NAMEDB == 0)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai];
+                            }
+                            if (NAMEDB == 1)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 2)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 3)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 4)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 5)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 6)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 7)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 8)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 9)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 10)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 11)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 12)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 13)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 14)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 15)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 16)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 17)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 18)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 19)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
-                        if (NAMEDB == 2)
+                        else
                         {
-                            username1 = firstname[indexRandom] + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            if (mac_dinh_name == "3|1|firstname+_+lastname+kytu+1000000")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            if (mac_dinh_name == "3|2|Firstname+_+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom] + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "3|3|firstname+_+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "3|4|firstname+_+lastname+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai];
+                            }
+                            if (mac_dinh_name == "3|5|firstname+_+lastname+_+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|6|firstname+_+lastname+.+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|7|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|8|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|9|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|10|firstname+_+lastname+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|11|firstname+_+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|12|firstname+_+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|13|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|14|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|15|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|16|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|17|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|18|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|19|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|20|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|21|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|22|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|23|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|24|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+
                         }
-                        if (NAMEDB == 0)
-                        {
-                            username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
-                        }
+
+
 
 
 
@@ -11448,6 +13056,22 @@ namespace BMD2
                 }
                if (VN_US == "THAILAND")
                 {
+                    var kytu_abcchucai = File.ReadAllLines("abcchucai.txt").ToList();
+                    Random rndabcchucai = new Random();
+                    int indexRandom_abcchucai = rndabcchucai.Next(0, kytu_abcchucai.Count);
+                    int indexRandom_abcchucai1 = rndabcchucai.Next(0, kytu_abcchucai.Count);
+
+                    var kytu_bangchucai = File.ReadAllLines("bangchucai.txt").ToList();
+                    Random rndbangchucai = new Random();
+                    int indexRandom_bangchucai = rndbangchucai.Next(0, kytu_bangchucai.Count);
+                    int indexRandom_bangchucai1 = rndbangchucai.Next(0, kytu_bangchucai.Count);
+                    int indexRandom_bangchucai2 = rndbangchucai.Next(0, kytu_bangchucai.Count);
+
+                    Random rd_number1 = new Random();
+                    int randomNumber1 = rd_number1.Next(1, 10);
+                    int randomNumber2 = rd_number1.Next(1, 10);
+                    int randomNumber3 = rd_number1.Next(10, 100);
+
                     var firstname = File.ReadAllLines("TenThaiLan.txt").ToList();
                     Random rnd = new Random();
                     int indexRandom = rnd.Next(0, firstname.Count);
@@ -11480,10 +13104,41 @@ namespace BMD2
 
                     Random rdname = new Random();
                     int randomNumbername = rdname.Next(1, 1000);
+                    var NAME = "";
+                    if (RANDOM_4_17 == "OFF")
+                    {
+                        var NO_RANDOM = "";
+                        if (cmb_NO_RANDOM.InvokeRequired)
+                        {
+                            cmb_NO_RANDOM.Invoke(new Action(() =>
+                            {
+                                NO_RANDOM = cmb_NO_RANDOM.Text;
+                            }));
 
-                    Random nameV = new Random();
-                    int NAME = nameV.Next(0, 4);
-                    if (NAME == 1)
+                        }
+                        if (NO_RANDOM == "OFF")
+                        {
+                            var name_ig_file = File.ReadAllLines("chon_random_ig.txt").ToList();
+                            Random rndname_ig_file = new Random();
+                            int indexRandom_name_ig_file = rndname_ig_file.Next(0, name_ig_file.Count);
+
+                            mac_dinh_name = name_ig_file[indexRandom_name_ig_file];
+                            NAME = mac_dinh_name.Split('|')[0];
+                        }
+                        else
+                        {
+                            NAME = mac_dinh_name.Split('|')[0];
+                        }
+
+
+
+                    }
+                    if (RANDOM_4_17 == "ON")
+                    {
+                        NAME = mac_dinh_name.Split('|')[0];
+                    }
+
+                    if (NAME == "1")
                     {
                         try
                         {
@@ -11495,7 +13150,15 @@ namespace BMD2
                                                                             //FULLName.SendKeys(fullname);
                             enter_name_pass_IG(fullname, 20, FULLName);
 
-                            username1 = lastname[indexRandom_1].ToLower() + firstname[indexRandom].Replace(" ", "").ToLower() + kytu[indexRandom1] + randomNumber;
+                       
+                            if (mac_dinh_name == "1|1|name+lastname+kytu+1000000")
+                            {
+                                username1 = lastname[indexRandom_1].ToLower() + firstname[indexRandom].Replace(" ", "").ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            else
+                            {
+                                username1 = lastname[indexRandom_1].ToLower() + firstname[indexRandom].Replace(" ", "").ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                             IWebElement btnUserName = chromedriver.FindElement(By.Name("username"));
                             //btnUserName.SendKeys(username1);
                             enter_name_pass_IG(username1, 20, btnUserName);
@@ -11518,7 +13181,7 @@ namespace BMD2
                         catch { }
 
                     }
-                    if (NAME == 2)
+                    if (NAME == "2")
                     {
 
                         try
@@ -11535,20 +13198,195 @@ namespace BMD2
                         }
                         catch { }
 
-                        Random namedb = new Random();
-                        int NAMEDB = namedb.Next(0, 3);
-                        if (NAMEDB == 1)
+                        //Random namedb = new Random();
+                        //int NAMEDB = namedb.Next(0, 4);
+                        if (RANDOM_4_17 == "ON")
                         {
-                            username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            Random namedb = new Random();
+                            int NAMEDB = namedb.Next(0, 20);
+                            if (NAMEDB == 0)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 1)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 2)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 3)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 4)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 5)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 6)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 7)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 8)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 9)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 10)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 11)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 12)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 13)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 14)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 15)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 16)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 17)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 18)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 19)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
-                        if (NAMEDB == 2)
+                        else
                         {
-                            username1 = firstname[indexRandom].Replace(" ", "") + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            if (mac_dinh_name == "2|1|firstname+.+lastname+kytu+1000000")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            if (mac_dinh_name == "2|2|Firstname+.+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "") + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "2|3|firstname+.+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "2|4|firstname+.+lastname+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|5|firstname+.+lastname+.+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|6|firstname+.+lastname+_+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|7|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|8|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|9|firstname+.+lastname+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|10|firstname+.+lastname+.+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|11|firstname+.+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|12|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|13|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|14|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|15|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|16|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|17|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|18|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|19|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|20|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|21|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|22|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|23|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|24|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
-                        if (NAMEDB == 0)
-                        {
-                            username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
-                        }
+
+
+                   
                         IWebElement btnUserName = chromedriver.FindElement(By.Name("username"));
                         //btnUserName.SendKeys(username1);
                         enter_name_pass_IG(username1, 20, btnUserName);
@@ -11570,7 +13408,7 @@ namespace BMD2
                         Thread.Sleep(5000);
 
                     }
-                    if (NAME == 0)
+                    if (NAME == "0")
                     {
                         string fullname = lastname[indexRandom_1].ToLower() + firstname[indexRandom].ToLower();
 
@@ -11600,7 +13438,7 @@ namespace BMD2
                         //btnpassig.SendKeys(passig1);
                         enter_name_pass_IG(passig1, 20, btnpassig);
                     }
-                    if (NAME == 3)
+                    if (NAME == "3")
                     {
                         try
                         {
@@ -11616,22 +13454,195 @@ namespace BMD2
                         }
                         catch { }
 
-                        Random namedb = new Random();
-                        int NAMEDB = namedb.Next(0, 3);
-                        if (NAMEDB == 1)
+                        //Random namedb = new Random();
+                        //int NAMEDB = namedb.Next(0, 4);
+                        if (RANDOM_4_17 == "ON")
                         {
-                            username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            Random namedb = new Random();
+                            int NAMEDB = namedb.Next(0, 20);
+                            if (NAMEDB == 0)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai];
+                            }
+                            if (NAMEDB == 1)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 2)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 3)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 4)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 5)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 6)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 7)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 8)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 9)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 10)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 11)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 12)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 13)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 14)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 15)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 16)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 17)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 18)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 19)
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
-                        if (NAMEDB == 2)
+                        else
                         {
-                            username1 = firstname[indexRandom] + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
-                        }
-                        if (NAMEDB == 0)
-                        {
-                            username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            if (mac_dinh_name == "3|1|firstname+_+lastname+kytu+1000000")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            if (mac_dinh_name == "3|2|Firstname+_+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "") + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "3|3|firstname+_+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "3|4|firstname+_+lastname+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai];
+                            }
+                            if (mac_dinh_name == "3|5|firstname+_+lastname+_+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|6|firstname+_+lastname+.+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|7|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|8|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|9|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|10|firstname+_+lastname+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|11|firstname+_+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|12|firstname+_+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|13|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|14|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|15|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|16|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|17|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|18|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|19|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|20|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|21|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|22|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|23|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|24|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].Replace(" ", "").ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+
                         }
 
-
+                     
 
                         IWebElement btnUserName = chromedriver.FindElement(By.Name("username"));
                         //btnUserName.SendKeys(username1);
@@ -11668,6 +13679,20 @@ namespace BMD2
                 }
                if (VN_US == "KOREA")
                 {
+                    var kytu_abcchucai = File.ReadAllLines("abcchucai.txt").ToList();
+                    Random rndabcchucai = new Random();
+                    int indexRandom_abcchucai = rndabcchucai.Next(0, kytu_abcchucai.Count);
+                    int indexRandom_abcchucai1 = rndabcchucai.Next(0, kytu_abcchucai.Count);
+                    var kytu_bangchucai = File.ReadAllLines("bangchucai.txt").ToList();
+                    Random rndbangchucai = new Random();
+                    int indexRandom_bangchucai = rndbangchucai.Next(0, kytu_bangchucai.Count);
+                    int indexRandom_bangchucai1 = rndbangchucai.Next(0, kytu_bangchucai.Count);
+                    int indexRandom_bangchucai2 = rndbangchucai.Next(0, kytu_bangchucai.Count);
+
+                    Random rd_number1 = new Random();
+                    int randomNumber1 = rd_number1.Next(1, 10);
+                    int randomNumber2 = rd_number1.Next(1, 10);
+                    int randomNumber3 = rd_number1.Next(10, 100);
                     var firstname = File.ReadAllLines("TenHanQuoc.txt").ToList();
                     Random rnd = new Random();
                     int indexRandom = rnd.Next(0, firstname.Count);
@@ -11701,9 +13726,40 @@ namespace BMD2
                     Random rdname = new Random();
                     int randomNumbername = rdname.Next(1, 1000);
 
-                    Random nameV = new Random();
-                    int NAME = nameV.Next(0, 4);
-                    if (NAME == 1)
+                    var NAME = "";
+                    if (RANDOM_4_17 == "OFF")
+                    {
+                        var NO_RANDOM = "";
+                        if (cmb_NO_RANDOM.InvokeRequired)
+                        {
+                            cmb_NO_RANDOM.Invoke(new Action(() =>
+                            {
+                                NO_RANDOM = cmb_NO_RANDOM.Text;
+                            }));
+
+                        }
+                        if (NO_RANDOM == "OFF")
+                        {
+                            var name_ig_file = File.ReadAllLines("chon_random_ig.txt").ToList();
+                            Random rndname_ig_file = new Random();
+                            int indexRandom_name_ig_file = rndname_ig_file.Next(0, name_ig_file.Count);
+
+                            mac_dinh_name = name_ig_file[indexRandom_name_ig_file];
+                            NAME = mac_dinh_name.Split('|')[0];
+                        }
+                        else
+                        {
+                            NAME = mac_dinh_name.Split('|')[0];
+                        }
+
+
+
+                    }
+                    if (RANDOM_4_17 == "ON")
+                    {
+                        NAME = mac_dinh_name.Split('|')[0];
+                    }
+                    if (NAME == "1")
                     {
                         try
                         {
@@ -11715,7 +13771,14 @@ namespace BMD2
                                                                             //FULLName.SendKeys(fullname);
                             enter_name_pass_IG(fullname, 20, FULLName);
 
-                            username1 = lastname[indexRandom_1].ToLower() + firstname[indexRandom].ToLower() + kytu[indexRandom1] + randomNumber;
+                            if (mac_dinh_name == "1|1|name+lastname+kytu+1000000")
+                            {
+                                username1 = lastname[indexRandom_1].ToLower() + firstname[indexRandom].Replace(" ", "").ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            else
+                            {
+                                username1 = lastname[indexRandom_1].ToLower() + firstname[indexRandom].Replace(" ", "").ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                             IWebElement btnUserName = chromedriver.FindElement(By.Name("username"));
                             //btnUserName.SendKeys(username1);
                             enter_name_pass_IG(username1, 20, btnUserName);
@@ -11738,7 +13801,7 @@ namespace BMD2
                         catch { }
 
                     }
-                    if (NAME == 2)
+                    if (NAME == "2")
                     {
 
                         try
@@ -11755,20 +13818,196 @@ namespace BMD2
                         }
                         catch { }
 
-                        Random namedb = new Random();
-                        int NAMEDB = namedb.Next(0, 3);
-                        if (NAMEDB == 1)
+                        //Random namedb = new Random();
+                        //int NAMEDB = namedb.Next(0, 4);
+
+
+                        if (RANDOM_4_17 == "ON")
                         {
-                            username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            Random namedb = new Random();
+                            int NAMEDB = namedb.Next(0, 20);
+                            if (NAMEDB == 0)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 1)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 2)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 3)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 4)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 5)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 6)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 7)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 8)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 9)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 10)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 11)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 12)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 13)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 14)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 15)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 16)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 17)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 18)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 19)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
-                        if (NAMEDB == 2)
+                        else
                         {
-                            username1 = firstname[indexRandom] + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            if (mac_dinh_name == "2|1|firstname+.+lastname+kytu+1000000")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            if (mac_dinh_name == "2|2|Firstname+.+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom] + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "2|3|firstname+.+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "2|4|firstname+.+lastname+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|5|firstname+.+lastname+.+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|6|firstname+.+lastname+_+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|7|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|8|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|9|firstname+.+lastname+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|10|firstname+.+lastname+.+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|11|firstname+.+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|12|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|13|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|14|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|15|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|16|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|17|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|18|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|19|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|20|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|21|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|22|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|23|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|24|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
-                        if (NAMEDB == 0)
-                        {
-                            username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
-                        }
+
+
                         IWebElement btnUserName = chromedriver.FindElement(By.Name("username"));
                         //btnUserName.SendKeys(username1);
                         enter_name_pass_IG(username1, 20, btnUserName);
@@ -11790,7 +14029,7 @@ namespace BMD2
                         Thread.Sleep(5000);
 
                     }
-                    if (NAME == 0)
+                    if (NAME == "0")
                     {
                         string fullname = lastname[indexRandom_1].ToLower() + firstname[indexRandom].ToLower();
 
@@ -11820,7 +14059,7 @@ namespace BMD2
                         //btnpassig.SendKeys(passig1);
                         enter_name_pass_IG(passig1, 20, btnpassig);
                     }
-                    if (NAME == 3)
+                    if (NAME == "3")
                     {
                         try
                         {
@@ -11836,19 +14075,195 @@ namespace BMD2
                         }
                         catch { }
 
-                        Random namedb = new Random();
-                        int NAMEDB = namedb.Next(0, 3);
-                        if (NAMEDB == 1)
+                        //Random namedb = new Random();
+                        //int NAMEDB = namedb.Next(0, 4);
+
+
+
+                        if (RANDOM_4_17 == "ON")
                         {
-                            username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            Random namedb = new Random();
+                            int NAMEDB = namedb.Next(0, 20);
+                            if (NAMEDB == 0)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai];
+                            }
+                            if (NAMEDB == 1)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 2)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 3)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 4)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 5)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 6)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 7)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 8)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 9)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 10)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 11)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 12)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 13)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 14)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 15)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 16)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 17)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 18)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 19)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
-                        if (NAMEDB == 2)
+                        else
                         {
-                            username1 = firstname[indexRandom] + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
-                        }
-                        if (NAMEDB == 0)
-                        {
-                            username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            if (mac_dinh_name == "3|1|firstname+_+lastname+kytu+1000000")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            if (mac_dinh_name == "3|2|Firstname+_+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom] + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "3|3|firstname+_+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "3|4|firstname+_+lastname+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai];
+                            }
+                            if (mac_dinh_name == "3|5|firstname+_+lastname+_+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|6|firstname+_+lastname+.+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|7|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|8|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|9|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|10|firstname+_+lastname+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|11|firstname+_+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|12|firstname+_+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|13|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|14|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|15|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|16|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|17|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|18|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|19|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|20|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|21|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|22|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|23|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|24|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+
                         }
 
 
@@ -11886,8 +14301,24 @@ namespace BMD2
 
                     }
                 }
-               if (VN_US == "CAMPUCHIA")
+                if (VN_US == "CAMPUCHIA")
                 {
+                    var kytu_abcchucai = File.ReadAllLines("abcchucai.txt").ToList();
+                    Random rndabcchucai = new Random();
+                    int indexRandom_abcchucai = rndabcchucai.Next(0, kytu_abcchucai.Count);
+                    int indexRandom_abcchucai1 = rndabcchucai.Next(0, kytu_abcchucai.Count);
+
+                    var kytu_bangchucai = File.ReadAllLines("bangchucai.txt").ToList();
+                    Random rndbangchucai = new Random();
+                    int indexRandom_bangchucai = rndbangchucai.Next(0, kytu_bangchucai.Count);
+                    int indexRandom_bangchucai1 = rndbangchucai.Next(0, kytu_bangchucai.Count);
+                    int indexRandom_bangchucai2 = rndbangchucai.Next(0, kytu_bangchucai.Count);
+
+                    Random rd_number1 = new Random();
+                    int randomNumber1 = rd_number1.Next(1, 10);
+                    int randomNumber2 = rd_number1.Next(1, 10);
+                    int randomNumber3 = rd_number1.Next(10, 100);
+
                     var firstname = File.ReadAllLines("TenCampuchia.txt").ToList();
                     Random rnd = new Random();
                     int indexRandom = rnd.Next(0, firstname.Count);
@@ -11920,10 +14351,41 @@ namespace BMD2
 
                     Random rdname = new Random();
                     int randomNumbername = rdname.Next(1, 1000);
+                    var NAME = "";
+                    if (RANDOM_4_17 == "OFF")
+                    {
+                        var NO_RANDOM = "";
+                        if (cmb_NO_RANDOM.InvokeRequired)
+                        {
+                            cmb_NO_RANDOM.Invoke(new Action(() =>
+                            {
+                                NO_RANDOM = cmb_NO_RANDOM.Text;
+                            }));
 
-                    Random nameV = new Random();
-                    int NAME = nameV.Next(0, 3);
-                    if (NAME == 1)
+                        }
+                        if (NO_RANDOM == "OFF")
+                        {
+                            var name_ig_file = File.ReadAllLines("chon_random_ig.txt").ToList();
+                            Random rndname_ig_file = new Random();
+                            int indexRandom_name_ig_file = rndname_ig_file.Next(0, name_ig_file.Count);
+
+                            mac_dinh_name = name_ig_file[indexRandom_name_ig_file];
+                            NAME = mac_dinh_name.Split('|')[0];
+                        }
+                        else
+                        {
+                            NAME = mac_dinh_name.Split('|')[0];
+                        }
+
+
+
+                    }
+                    if (RANDOM_4_17 == "ON")
+                    {
+                        NAME = mac_dinh_name.Split('|')[0];
+                    }
+
+                    if (NAME == "1")
                     {
                         try
                         {
@@ -11935,7 +14397,14 @@ namespace BMD2
                                                                             //FULLName.SendKeys(fullname);
                             enter_name_pass_IG(fullname, 20, FULLName);
 
-                            username1 = lastname[indexRandom_1].ToLower() + firstname[indexRandom].ToLower() + kytu[indexRandom1] + randomNumber;
+                            if (mac_dinh_name == "1|1|name+lastname+kytu+1000000")
+                            {
+                                username1 = lastname[indexRandom_1].ToLower() + firstname[indexRandom].Replace(" ", "").ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            else
+                            {
+                                username1 = lastname[indexRandom_1].ToLower() + firstname[indexRandom].Replace(" ", "").ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                             IWebElement btnUserName = chromedriver.FindElement(By.Name("username"));
                             //btnUserName.SendKeys(username1);
                             enter_name_pass_IG(username1, 20, btnUserName);
@@ -11958,7 +14427,7 @@ namespace BMD2
                         catch { }
 
                     }
-                    if (NAME == 2)
+                    if (NAME == "2")
                     {
 
                         try
@@ -11975,20 +14444,196 @@ namespace BMD2
                         }
                         catch { }
 
-                        Random namedb = new Random();
-                        int NAMEDB = namedb.Next(0, 3);
-                        if (NAMEDB == 1)
+                        //Random namedb = new Random();
+                        //int NAMEDB = namedb.Next(0, 4);
+
+
+                        if (RANDOM_4_17 == "ON")
                         {
-                            username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            Random namedb = new Random();
+                            int NAMEDB = namedb.Next(0, 20);
+                            if (NAMEDB == 0)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 1)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 2)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 3)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 4)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 5)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 6)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 7)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 8)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 9)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 10)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 11)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 12)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 13)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 14)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 15)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 16)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 17)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 18)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 19)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
-                        if (NAMEDB == 2)
+                        else
                         {
-                            username1 = firstname[indexRandom] + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            if (mac_dinh_name == "2|1|firstname+.+lastname+kytu+1000000")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            if (mac_dinh_name == "2|2|Firstname+.+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom] + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "2|3|firstname+.+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "2|4|firstname+.+lastname+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|5|firstname+.+lastname+.+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|6|firstname+.+lastname+_+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|7|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|8|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|9|firstname+.+lastname+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|10|firstname+.+lastname+.+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|11|firstname+.+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|12|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|13|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|14|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|15|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|16|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|17|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|18|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "2|19|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|20|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|21|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "2|22|firstname+.+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|23|firstname+.+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "2|24|firstname+.+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
                         }
-                        if (NAMEDB == 0)
-                        {
-                            username1 = firstname[indexRandom].ToLower() + "." + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
-                        }
+
+
                         IWebElement btnUserName = chromedriver.FindElement(By.Name("username"));
                         //btnUserName.SendKeys(username1);
                         enter_name_pass_IG(username1, 20, btnUserName);
@@ -12010,7 +14655,7 @@ namespace BMD2
                         Thread.Sleep(5000);
 
                     }
-                    if (NAME == 0)
+                    if (NAME == "0")
                     {
                         string fullname = lastname[indexRandom_1].ToLower() + firstname[indexRandom].ToLower();
 
@@ -12040,7 +14685,7 @@ namespace BMD2
                         //btnpassig.SendKeys(passig1);
                         enter_name_pass_IG(passig1, 20, btnpassig);
                     }
-                    if (NAME == 4)
+                    if (NAME == "3")
                     {
                         try
                         {
@@ -12056,21 +14701,196 @@ namespace BMD2
                         }
                         catch { }
 
-                        Random namedb = new Random();
-                        int NAMEDB = namedb.Next(0, 3);
-                        if (NAMEDB == 1)
-                        {
-                            username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
-                        }
-                        if (NAMEDB == 2)
-                        {
-                            username1 = firstname[indexRandom] + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
-                        }
-                        if (NAMEDB == 0)
-                        {
-                            username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
-                        }
+                        //Random namedb = new Random();
+                        //int NAMEDB = namedb.Next(0, 4);
 
+
+
+                        if (RANDOM_4_17 == "ON")
+                        {
+                            Random namedb = new Random();
+                            int NAMEDB = namedb.Next(0, 20);
+                            if (NAMEDB == 0)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai];
+                            }
+                            if (NAMEDB == 1)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 2)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 3)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 4)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 5)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 6)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 7)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 8)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 9)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 10)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 11)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 12)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 13)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (NAMEDB == 14)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 15)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 16)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (NAMEDB == 17)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 18)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (NAMEDB == 19)
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                        }
+                        else
+                        {
+                            if (mac_dinh_name == "3|1|firstname+_+lastname+kytu+1000000")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu[indexRandom1] + randomNumber;
+                            }
+                            if (mac_dinh_name == "3|2|Firstname+_+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom] + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "3|3|firstname+_+lastname+kytudb+so+kytudb")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + Kytunamedb[indexRandom_ktnamedb] + randomNumbername + kytuchuname[indexRandom_ktnamechu];
+                            }
+                            if (mac_dinh_name == "3|4|firstname+_+lastname+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai];
+                            }
+                            if (mac_dinh_name == "3|5|firstname+_+lastname+_+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|6|firstname+_+lastname+.+kytu_bangchucai1+so1+kytu_bangchucai1+so2+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|7|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|8|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|9|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|10|firstname+_+lastname+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|11|firstname+_+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|12|firstname+_+lastname+_+kytu_abcchucai+so1-10+kytu_bangchucai1+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_abcchucai[indexRandom_abcchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|13|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|14|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|15|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_bangchucai2")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|16|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|17|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|18|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3;
+                            }
+                            if (mac_dinh_name == "3|19|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|20|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|21|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_abcchucai+so10-100+kytu_abcchucai1")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_abcchucai[indexRandom_abcchucai] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1];
+                            }
+                            if (mac_dinh_name == "3|22|firstname+_+lastname+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|23|firstname+_+lastname+_+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "_" + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+                            if (mac_dinh_name == "3|24|firstname+_+lastname+.+kytu_bangchucai1+so1-10+kytu_bangchucai2+so10-100+kytu_abcchucai1+so1-10+kytu_bangchucai3")
+                            {
+                                username1 = firstname[indexRandom].ToLower() + "_" + lastname[indexRandom_1].ToLower() + "." + kytu_bangchucai[indexRandom_bangchucai] + randomNumber1 + kytu_bangchucai[indexRandom_bangchucai1] + randomNumber3 + kytu_abcchucai[indexRandom_abcchucai1] + randomNumber2 + kytu_bangchucai[indexRandom_bangchucai2];
+                            }
+
+                        }
 
 
                         IWebElement btnUserName = chromedriver.FindElement(By.Name("username"));
@@ -12097,7 +14917,6 @@ namespace BMD2
 
 
                     }
-
 
                     Thread.Sleep(5000);
                     while (isStop)
@@ -13893,6 +16712,7 @@ namespace BMD2
         {
             try
             {
+                var ad_account_creation_limit = "";
                 check_BM = 0;
                 int Y = 1;
                 List<string> ID_ALL_BM = new List<string>();
@@ -14004,6 +16824,69 @@ namespace BMD2
                         }
                         if (string.IsNullOrEmpty(token_EEAB))
                         {
+                            var IDBM_CHECK = "";
+                            if (tb_IDBM_CHECK.InvokeRequired)
+                            {
+                                tb_IDBM_CHECK.Invoke(new Action(() =>
+                                {
+                                    IDBM_CHECK = tb_IDBM_CHECK.Text;
+
+                                }));
+                            }
+                            if (string.IsNullOrEmpty(IDBM_CHECK))
+                            {
+                                while (string.IsNullOrEmpty(IDBM_CHECK))
+                                {
+                                    try
+                                    {
+                                        MessageBox.Show("IDBM_CHECK NULL");
+
+                                        if (tb_IDBM_CHECK.InvokeRequired)
+                                        {
+                                            tb_IDBM_CHECK.Invoke(new Action(() =>
+                                            {
+                                                IDBM_CHECK = tb_IDBM_CHECK.Text;
+
+                                            }));
+                                        }
+                                    }
+                                    catch { }
+
+                                }
+                            }
+
+                            httpRequest.AddHeader("authority", "business.facebook.com");
+                            httpRequest.AddHeader("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");
+                            httpRequest.AddHeader("accept-language", "en-US,en;q=0.9");
+                            httpRequest.AddHeader("dpr", "0.800000011920929");
+                            httpRequest.AddHeader("priority", "u=0, i");
+                            httpRequest.AddHeader("sec-ch-prefers-color-scheme", "dark");
+                            httpRequest.AddHeader("sec-ch-ua", "\"Google Chrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\"");
+                            httpRequest.AddHeader("sec-ch-ua-mobile", "?0");
+                            httpRequest.AddHeader("sec-ch-ua-model", "\"\"");
+                            httpRequest.AddHeader("sec-ch-ua-platform", "\"Windows\"");
+                            httpRequest.AddHeader("sec-ch-ua-platform-version", "\"\"");
+                            httpRequest.AddHeader("sec-fetch-dest", "document");
+                            httpRequest.AddHeader("sec-fetch-mode", "navigate");
+                            httpRequest.AddHeader("sec-fetch-site", "same-origin");
+                            httpRequest.AddHeader("sec-fetch-user", "?1");
+                            httpRequest.AddHeader("upgrade-insecure-requests", "1");
+                            httpRequest.AddHeader("viewport-width", "1398");
+
+                            response1 = httpRequest.Get($"https://business.facebook.com/latest/settings/business_users/?business_id={IDBM_CHECK}");
+                            if (response1.IsOK)
+                            {
+                                var response2STR = response1.ToString();
+                                token_EEAB = Regex.Match(response2STR, "apiAccessToken\":\"(.*?)\"").Groups[1].Value.ToString();
+
+                            }
+
+
+
+
+                        }
+                        if (string.IsNullOrEmpty(token_EEAB))
+                        {
                             while (string.IsNullOrEmpty(token_EEAB))
                             {
                                 try
@@ -14103,44 +16986,63 @@ namespace BMD2
                                     }
                                 }
                                 ID_ALL_BM.Add(businessId);
-                                var ad_account_creation_limit = "";
-                                try
+                                var Check_Infor_BM = "";
+                                if (cmb_Check_Infor_BM.InvokeRequired)
                                 {
-                                    httpRequest.AddHeader("authority", "business.facebook.com");
-                                    httpRequest.AddHeader("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");
-                                    httpRequest.AddHeader("accept-language", "en-US,en;q=0.9");
-                                    httpRequest.AddHeader("sec-ch-prefers-color-scheme", "dark");
-                                    httpRequest.AddHeader("sec-ch-ua", "\"Google Chrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\"");
-                                    httpRequest.AddHeader("sec-ch-ua-full-version-list", "\"Google Chrome\";v=\"141.0.7390.54\", \"Not?A_Brand\";v=\"8.0.0.0\", \"Chromium\";v=\"141.0.7390.54\"");
-                                    httpRequest.AddHeader("sec-ch-ua-mobile", "?0");
-                                    httpRequest.AddHeader("sec-ch-ua-model", "\"\"");
-                                    httpRequest.AddHeader("sec-ch-ua-platform", "\"Windows\"");
-                                    httpRequest.AddHeader("sec-ch-ua-platform-version", "\"19.0.0\"");
-                                    httpRequest.AddHeader("sec-fetch-dest", "document");
-                                    httpRequest.AddHeader("sec-fetch-mode", "navigate");
-                                    httpRequest.AddHeader("sec-fetch-site", "same-origin");
-                                    httpRequest.AddHeader("sec-fetch-user", "?1");
-                                    httpRequest.AddHeader("upgrade-insecure-requests", "1");
-                                    httpRequest.AddHeader("viewport-width", "863");
-
-                             
-                                    var link_get4 = $"https://business.facebook.com/latest/settings/business_info?business_id={businessId}";
-
-                                    response = httpRequest.Get(link_get4);
-                                    if (response.IsOK)
+                                    cmb_Check_Infor_BM.Invoke(new Action(() =>
                                     {
-                                        try
+                                        Check_Infor_BM = cmb_Check_Infor_BM.Text;
+
+                                    }));
+
+                                }
+                                if (Check_Infor_BM == "ON")
+                                {
+
+                                    try
+                                    {
+
+
+                                        httpRequest.AddHeader("authority", "business.facebook.com");
+                                        httpRequest.AddHeader("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");
+                                        httpRequest.AddHeader("accept-language", "en-US,en;q=0.9");
+                                        httpRequest.AddHeader("sec-ch-prefers-color-scheme", "dark");
+                                        httpRequest.AddHeader("sec-ch-ua", "\"Google Chrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\"");
+                                        httpRequest.AddHeader("sec-ch-ua-full-version-list", "\"Google Chrome\";v=\"141.0.7390.54\", \"Not?A_Brand\";v=\"8.0.0.0\", \"Chromium\";v=\"141.0.7390.54\"");
+                                        httpRequest.AddHeader("sec-ch-ua-mobile", "?0");
+                                        httpRequest.AddHeader("sec-ch-ua-model", "\"\"");
+                                        httpRequest.AddHeader("sec-ch-ua-platform", "\"Windows\"");
+                                        httpRequest.AddHeader("sec-ch-ua-platform-version", "\"19.0.0\"");
+                                        httpRequest.AddHeader("sec-fetch-dest", "document");
+                                        httpRequest.AddHeader("sec-fetch-mode", "navigate");
+                                        httpRequest.AddHeader("sec-fetch-site", "same-origin");
+                                        httpRequest.AddHeader("sec-fetch-user", "?1");
+                                        httpRequest.AddHeader("upgrade-insecure-requests", "1");
+                                        httpRequest.AddHeader("viewport-width", "863");
+
+
+                                        var link_get4 = $"https://business.facebook.com/latest/settings/business_info?business_id={businessId}";
+
+                                        response = httpRequest.Get(link_get4);
+                                        if (response.IsOK)
                                         {
-                                            var responseStr = response.ToString();
-                                            ad_account_creation_limit = Regex.Match(responseStr, "\"ad_account_creation_limit\":(.*?)},").Groups[1].Value.ToString();
-                                            ad_account_creation_limit = $"BM {ad_account_creation_limit}";
+                                            try
+                                            {
+                                                var responseStr = response.ToString();
+                                                ad_account_creation_limit = Regex.Match(responseStr, "\"ad_account_creation_limit\":(.*?)},").Groups[1].Value.ToString();
+                                                ad_account_creation_limit = $"BM {ad_account_creation_limit}";
+                                            }
+                                            catch { }
+
                                         }
-                                        catch { }
+                                        int Delay = (int)delay_check_infor.Value;
+                                        Thread.Sleep(TimeSpan.FromSeconds(Delay));
 
                                     }
+                                    catch { }
                                 }
-                                catch { }
-                           
+                          
+                      
 
                                 var typeBm = itemObject["sharing_eligibility_status"].ToString() == "enabled" ? "BM350" : "BM50";
                                 var createdtime = itemObject["created_time"].ToString();
@@ -14247,6 +17149,10 @@ namespace BMD2
                 {
                     add_2 = dgv_BM.Rows.Add((dgv_BM.RowCount + 1), $"VIA:{UID_VIA}|Tổng:LIVE|{IDBM_LIVE.Count}|DIE|{IDBM_DIE.Count}");
                 }));
+
+            
+
+
 
             }
             catch { }
@@ -18609,7 +21515,21 @@ namespace BMD2
 
                                                 }));
                                             }
-                                            goto next;
+                                            var bo = "";
+                                            if (cmb_bo_check1.InvokeRequired)
+                                            {
+                                                cmb_bo_check1.Invoke(new Action(() =>
+                                                {
+                                                    bo = cmb_bo_check1.Text;
+                                                }));
+
+                                            }
+                                            if(bo == "ON")
+                                            {
+                                                goto next;
+                                            }
+
+                                        
                                         }
 
 
@@ -19804,7 +22724,7 @@ namespace BMD2
                     chromedriver.Navigate().GoToUrl($"https://business.facebook.com/latest/settings/business_users?business_id={IDBM_BACK_UOT[0].Split('|')[1]}");
                     var html_1 = chromedriver.PageSource;
 
-               
+
                 }
 
                 foreach (var IDVIA_IDBM in IDBM_BACK_UOT)
@@ -20119,18 +23039,20 @@ namespace BMD2
                     {
                         var mail_share1 = mail_n.Split('|')[0].ToString();
                         var pass_mail_1 = mail_n.Split('|')[1].ToString();
+                        var accessToken = mail_n.Split('|')[2].ToString();
+                        var refreshToken = "";
 
                         // Tạo task xử lý cho mỗi email
                         var task = new Task(() =>
                         {
                             try
                             {
-                                var (username1, password1, accessToken, refreshToken) = TurnOnOAUTH2(mail_share1, pass_mail_1);
-                                if (string.IsNullOrEmpty(accessToken))
-                                {
-                                    Task.Delay(TimeSpan.FromSeconds(5)).Wait();
-                                    (username1, password1, accessToken, refreshToken) = TurnOnOAUTH2(mail_share1, pass_mail_1);
-                                }
+                                //var (username1, password1, accessToken, refreshToken) = TurnOnOAUTH2(mail_share1, pass_mail_1);
+                                //if (string.IsNullOrEmpty(accessToken))
+                                //{
+                                //    Task.Delay(TimeSpan.FromSeconds(5)).Wait();
+                                //    (username1, password1, accessToken, refreshToken) = TurnOnOAUTH2(mail_share1, pass_mail_1);
+                                //}
 
                                 // Lấy Link từ tài khoản email
                                 Link1 = GetLinkBm_IG(mail_share1, pass_mail_1, accessToken, refreshToken);
@@ -20374,6 +23296,11 @@ namespace BMD2
 
             }
         }
+    
+     
+
+    
+   
         private void DOC_LINK_DA_LUONG_BMIG_MAIL_MOAKT(List<(HttpRequest Request, string Mail)> httprequest_Mail_MOAKT_BM50_BM350 , DataGridViewRow row )
         {
             try
@@ -22309,6 +25236,7 @@ namespace BMD2
                     }));
                 }
                 List<(HttpRequest Request, string Mail)> httprequest_Mail_MOAKT_BM50_BM350 = new List<(HttpRequest, string)>();
+                List<(HttpRequest Request, string Mail)> httprequest_Hotmail_BM50_BM350 = new List<(HttpRequest, string)>();
                 var stt1 = row.Cells["cStt"].Value.ToString();
                 if (mail_nhan == "Moakt")
                 {
@@ -23043,29 +25971,56 @@ namespace BMD2
                                     httpRequest.AddHeader("sec-fetch-site", "none");
                                     response = httpRequest.Get(link);
                                     var responseStr_6 = response.ToString();
-
-                                    var businessName = Regex.Match(responseStr_6, "inviteBusinessName\":\"(.*?)\",").Groups[1].Value.ToString().Replace("\\", "");
-                                    var businessID = businessName.Split('/')[1];
-                                    if (string.IsNullOrEmpty(IDBM))
+                                    var loai_mail = "";
+                                    if (cmb_loai_mail_nhan_bm_ig.InvokeRequired)
                                     {
-                                        IDBM = businessID;
+                                        cmb_loai_mail_nhan_bm_ig.Invoke(new Action(() =>
+                                        {
+                                            loai_mail = cmb_loai_mail_nhan_bm_ig.Text;
+
+                                        }));
+
+                                    }
+                                    var businessID = "";
+                                    var businessName = "";
+                                    if (loai_mail == "Hotmail")
+                                    {
+                                        businessID = Regex.Match(responseStr_6, "businessID\":\"(.*?)\"").Groups[1].Value.ToString();
+                                        businessName = Regex.Match(responseStr_6, "businessName\":\"(.*?)\"").Groups[1].Value.ToString();
                                     }
                                     else
                                     {
-                                        if (IDBM != businessID)
+                                        businessName = Regex.Match(responseStr_6, "inviteBusinessName\":\"(.*?)\",").Groups[1].Value.ToString().Replace("\\", "");
+                                        businessID = businessName.Split('/')[1];
+                                        if (string.IsNullOrEmpty(IDBM))
                                         {
-                                            row.Cells["cStatus"].Value = $" Link BM {IDBM} Khác BM Đang Nhận: {businessID} Name: {businessName} FAIL!";
-                                            LINK_FAIL.Add(IDBM);
-                                            if (rtb_Link_FAIL.InvokeRequired)
+                                            IDBM = businessID;
+                                        }
+                                        else
+                                        {
+                                            if (IDBM != businessID)
                                             {
-                                                rtb_Link_FAIL.Invoke(new Action(() =>
+                                                row.Cells["cStatus"].Value = $" Link BM {IDBM} Khác BM Đang Nhận: {businessID} Name: {businessName} FAIL!";
+                                                LINK_FAIL.Add(IDBM);
+                                                if (rtb_Link_FAIL.InvokeRequired)
                                                 {
-                                                    rtb_Link_FAIL.AppendText(IDBM + "|" + link + "| BM Khác" + Environment.NewLine);
-                                                }));
+                                                    rtb_Link_FAIL.Invoke(new Action(() =>
+                                                    {
+                                                        rtb_Link_FAIL.AppendText(IDBM + "|" + link + "| BM Khác" + Environment.NewLine);
+                                                    }));
+                                                }
+                                                goto out4;
                                             }
-                                            goto out4;
                                         }
                                     }
+                                   
+                             
+
+                         
+
+
+
+
                                     url = httpRequest.Address.ToString();
                                     var invitation_token = Regex.Match(responseStr_6, "invitation\\\\\\/\\?token=(.*?)&").Groups[1].Value.ToString();
                                     var cookieRaw = cookie1.Split(';');
@@ -23101,7 +26056,7 @@ namespace BMD2
                                     {
                                         var responseStr_9 = response.ToString();
 
-                                        if (responseStr_9.Contains("for (;;);{\"__ar\":1,\"payload\":null,\"lid\":\"")
+                                       if (responseStr_9.Contains("for (;;);{\"__ar\":1,\"payload\":null,\"lid\":\"")
                                             || responseStr_9.Contains("for (;;);{\"__ar\":1,\"rid\":\""))
                                         {
                                             row.Cells[7].Value = $"NHẬN LINK {link} DONE IDBM: {IDBM}";
@@ -27041,65 +29996,77 @@ namespace BMD2
                         var dataValuesArr = dataValues.ToObject<JArray>();
                         foreach (var itemObject in dataValuesArr)
                         {
-                            ADMIN = new List<string>();
-                            var businessId = itemObject["id"].ToString();
-                            var typeBm = itemObject["sharing_eligibility_status"].ToString() == "enabled" ? "BM350" : "BM50";
-                            var createdtime = itemObject["created_time"].ToString();
-                            var statusBm = itemObject["allow_page_management_in_www"].ToString().ToLower() == "true" ? "BM Live" : "BM Die";
-                            var business_users = itemObject["business_users"]?["data"];
-                            var nameBM = itemObject["name"].ToString();
-                            if(chi_share_bm350 == "ON")
+                            try
                             {
-                                if(typeBm == "BM50")
+                     
+                                var businessId = itemObject["id"].ToString();
+                                var typeBm = itemObject["sharing_eligibility_status"].ToString() == "enabled" ? "BM350" : "BM50";
+                                var createdtime = itemObject["created_time"].ToString();
+                                var statusBm = itemObject["allow_page_management_in_www"].ToString().ToLower() == "true" ? "BM Live" : "BM Die";
+                                var business_users = itemObject["business_users"]?["data"];
+                                var nameBM = itemObject["name"].ToString();
+                                if (chi_share_bm350 == "ON")
+                                {
+                                    if (typeBm == "BM50")
+                                    {
+                                        goto check;
+                                    }
+                                }
+                                if (statusBm == "BM Die")
                                 {
                                     goto check;
                                 }
-                            }
-                      
-                            var userName = "";
-                            if (business_users != null)
-                            {
-                                var businessUsersArr = business_users.ToObject<JArray>();
-                                foreach (var userObject in businessUsersArr)
+
+
+                                var userName = "";
+                                if (business_users != null)
                                 {
-                                    try
+                                    var businessUsersArr = business_users.ToObject<JArray>();
+                                    foreach (var userObject in businessUsersArr)
                                     {
-                                        var role = userObject["role"]?.ToString();
-                                        var userId = userObject["id"]?.ToString();
-                                        userName = userObject["name"]?.ToString();
-                                        ADMIN.Add(userName);
+                                        try
+                                        {
+                                            var role = userObject["role"]?.ToString();
+                                            var userId = userObject["id"]?.ToString();
+                                            userName = userObject["name"]?.ToString();
+                                            ADMIN.Add(userName);
+                                        }
+                                        catch { }
+
                                     }
-                                    catch { }
-
-                                }
 
 
-                                row.Cells["cStatus"].Value = $"ADMIN {ADMIN.Count}";
-                                if (ADMIN.Count < 1)
-                                {
-                                   
-                                    goto checkadmin;
+                                    row.Cells["cStatus"].Value = $"ADMIN {ADMIN.Count}";
+                                    if (ADMIN.Count < 1)
+                                    {
+
+                                        goto checkadmin;
+                                    }
+                                    else
+                                    {
+                                        row.Cells["cStatus"].Value = $"ADMIN {ADMIN.Count} =>{userName} NHẬN BM DONE";
+                                        listNHANBMDONE.Add(businessId);
+
+                                    }
                                 }
                                 else
                                 {
-                                    row.Cells["cStatus"].Value = $"ADMIN {ADMIN.Count} =>{userName} NHẬN BM DONE";
-                                    listNHANBMDONE.Add(businessId);
-                            
+                                    checkadmin_sl++;
+                                    int slcheck = (int)numericUpDown5_slcheck_bm350.Value;
+                                    if (checkadmin_sl == slcheck)
+                                    {
+                                        goto next;
+                                    }
+                                    goto checkadmin;
+
                                 }
+                            check:
+                                Thread.Sleep(100);
                             }
-                            else
+                            catch
                             {
-                                checkadmin_sl++;
-                                int slcheck = (int)numericUpDown5_slcheck_bm350.Value;
-                                if (checkadmin_sl == slcheck)
-                                {
-                                    goto next;
-                                }
-                                goto checkadmin;
-                              
                             }
-                        check:
-                            Thread.Sleep(100);
+                        
                         }
 
                        
@@ -30026,6 +32993,7 @@ namespace BMD2
                                                                 }));
 
                                                             }
+                                                            List<string> listADMIN = new List<string>();
                                                             if (CHECK_ADMIN == "ON")
                                                             {
                                                                 if (chi_share_bm_350 == "ON")
@@ -30036,55 +33004,56 @@ namespace BMD2
                                                                     }
 
                                                                 }
-                                                                List<string> listADMIN = new List<string>();
+                                                           
                                                                 listADMIN =CHECK_ADMIN_BM_IG5bm(chromedriver, row, accessToken_EAAG);
                                                                 if (listADMIN.Count == 0)
                                                                 {
                                                                     goto next;
                                                                 }
-                                                                var TKQC = "";
-                                                                if (cmb_TTKQC_BM_IG.InvokeRequired)
-                                                                {
-                                                                    cmb_TTKQC_BM_IG.Invoke(new Action(() =>
-                                                                    {
-                                                                        TKQC = cmb_TTKQC_BM_IG.Text;
+                                                      
 
-                                                                    }));
-                                                                }
-                                                                if (TKQC == "ON")
+                                                            }
+                                                            var TKQC = "";
+                                                            if (cmb_TTKQC_BM_IG.InvokeRequired)
+                                                            {
+                                                                cmb_TTKQC_BM_IG.Invoke(new Action(() =>
                                                                 {
-                                                                    TAOTK_BM_IG5bm(listBMLIVE_TK_BM50_BM350, chromedriver, row, username, password, c2FAvsCookie, mail, passmail, mailkhoiphuc);
+                                                                    TKQC = cmb_TTKQC_BM_IG.Text;
 
-                                                                }
-                                                            taobmt6:
-                                                                var REG_BMT6 = "";
-                                                                if (cmb_BMT6.InvokeRequired)
-                                                                {
-                                                                    cmb_BMT6.Invoke(new Action(() =>
-                                                                    {
-                                                                        REG_BMT6 = cmb_BMT6.Text;
-                                                                    }));
-                                                                }
-                                                                if (REG_BMT6 == "ON")
-                                                                {
-                                                                    REG_BMIG_T6(listBMLIVE, chromedriver, row, username, password, x2fa_ignew, mail, passmail, mailkhoiphuc);
-                                                                }
+                                                                }));
+                                                            }
+                                                            if (TKQC == "ON")
+                                                            {
+                                                                TAOTK_BM_IG5bm(listBMLIVE_TK_BM50_BM350, chromedriver, row, username, password, c2FAvsCookie, mail, passmail, mailkhoiphuc);
 
-                                                                var RIP_IG = "";
-
-                                                                if (cmb_RIPIG.InvokeRequired)
+                                                            }
+                                                        taobmt6:
+                                                            var REG_BMT6 = "";
+                                                            if (cmb_BMT6.InvokeRequired)
+                                                            {
+                                                                cmb_BMT6.Invoke(new Action(() =>
                                                                 {
-                                                                    cmb_RIPIG.Invoke(new Action(() =>
-                                                                    {
-                                                                        RIP_IG = cmb_RIPIG.Text;
-                                                                    }));
-                                                                }
-                                                                if (RIP_IG == "ON")
-                                                                {
-                                                                    chromedriver.Navigate().GoToUrl("https://accountscenter.instagram.com/personal_info/");
-                                                                    RIP(chromedriver, row, username, password, x2fa_ignew, mail, passmail, mailkhoiphuc);
-                                                                }
+                                                                    REG_BMT6 = cmb_BMT6.Text;
+                                                                }));
+                                                            }
+                                                            if (REG_BMT6 == "ON")
+                                                            {
+                                                                REG_BMIG_T6(listBMLIVE, chromedriver, row, username, password, x2fa_ignew, mail, passmail, mailkhoiphuc);
+                                                            }
 
+                                                            var RIP_IG = "";
+
+                                                            if (cmb_RIPIG.InvokeRequired)
+                                                            {
+                                                                cmb_RIPIG.Invoke(new Action(() =>
+                                                                {
+                                                                    RIP_IG = cmb_RIPIG.Text;
+                                                                }));
+                                                            }
+                                                            if (RIP_IG == "ON")
+                                                            {
+                                                                chromedriver.Navigate().GoToUrl("https://accountscenter.instagram.com/personal_info/");
+                                                                RIP(chromedriver, row, username, password, x2fa_ignew, mail, passmail, mailkhoiphuc);
                                                             }
 
                                                             var KICK_bm3 = "";
@@ -30099,65 +33068,20 @@ namespace BMD2
                                                             }
                                                             if (KICK_bm3 == "ON")
                                                             {
+                                                                if (CHECK_ADMIN == "ON")
+                                                                {
 
-                                                                KICK_BM3(listBMLIVE_TK_BM50_BM350, chromedriver, row, username, password, c2FAvsCookie, mail, passmail, mailkhoiphuc, accessToken_EAAG);
+                                                                    KICK_BM3(listADMIN, chromedriver, row, username, password, c2FAvsCookie, mail, passmail, mailkhoiphuc, accessToken_EAAG);
+                                                                }
+                                                                else
+                                                                {
+                                                                    KICK_BM3(listBMLIVETK, chromedriver, row, username, password, c2FAvsCookie, mail, passmail, mailkhoiphuc, accessToken_EAAG);
+                                                                }
                                                             }
                                                         }
 
                                                     }
-                                                    else
-                                                    {
-
-
-                                                        //httpRequest.AddHeader("authority", "www.facebook.com");
-                                                        //httpRequest.AddHeader("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");
-                                                        //httpRequest.AddHeader("accept-language", "en-US,en;q=0.9,vi;q=0.8");
-                                                        //httpRequest.AddHeader("priority", "u=0, i");
-                                                        //httpRequest.AddHeader("referer", "https://www.instagram.com/");
-                                                        //httpRequest.AddHeader("sec-ch-ua", "\"Not;A=Brand\";v=\"99\", \"Google Chrome\";v=\"139\", \"Chromium\";v=\"139\"");
-                                                        //httpRequest.AddHeader("sec-ch-ua-mobile", "?0");
-                                                        //httpRequest.AddHeader("sec-ch-ua-platform", "\"Windows\"");
-                                                        //httpRequest.AddHeader("sec-fetch-dest", "iframe");
-                                                        //httpRequest.AddHeader("sec-fetch-mode", "navigate");
-                                                        //httpRequest.AddHeader("sec-fetch-site", "cross-site");
-                                                        //httpRequest.AddHeader("sec-fetch-storage-access", "active");
-                                                        //httpRequest.AddHeader("upgrade-insecure-requests", "1");
-
-                                                        //response = httpRequest.Get("https://www.facebook.com/instagram/login_sync/");
-                                                        //if (response.IsOK)
-                                                        //{
-                                                        //    var responseStr_2 = response.ToString();
-                                                        //    var cooke_business = httpRequest.Cookies.ToString();
-                                                        //}
-
-
-                                                        //httpRequest.AddHeader("authority", "business.facebook.com");
-                                                        //httpRequest.AddHeader("accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7");
-                                                        //httpRequest.AddHeader("accept-language", "en-US,en;q=0.9,vi;q=0.8");
-                                                        //httpRequest.AddHeader("dpr", "1");
-                                                        //httpRequest.AddHeader("priority", "u=0, i");
-                                                        //httpRequest.AddHeader("sec-ch-prefers-color-scheme", "dark");
-                                                        //httpRequest.AddHeader("sec-ch-ua", "\"Not;A=Brand\";v=\"99\", \"Google Chrome\";v=\"139\", \"Chromium\";v=\"139\"");
-                                                        //httpRequest.AddHeader("sec-ch-ua-full-version-list", "\"Not;A=Brand\";v=\"99.0.0.0\", \"Google Chrome\";v=\"139.0.7258.155\", \"Chromium\";v=\"139.0.7258.155\"");
-                                                        //httpRequest.AddHeader("sec-ch-ua-mobile", "?0");
-                                                        //httpRequest.AddHeader("sec-ch-ua-model", "\"\"");
-                                                        //httpRequest.AddHeader("sec-ch-ua-platform", "\"Windows\"");
-                                                        //httpRequest.AddHeader("sec-ch-ua-platform-version", "\"19.0.0\"");
-                                                        //httpRequest.AddHeader("sec-fetch-dest", "document");
-                                                        //httpRequest.AddHeader("sec-fetch-mode", "navigate");
-                                                        //httpRequest.AddHeader("sec-fetch-site", "none");
-                                                        //httpRequest.AddHeader("sec-fetch-user", "?1");
-                                                        //httpRequest.AddHeader("upgrade-insecure-requests", "1");
-                                                        //httpRequest.AddHeader("viewport-width", "1019");
-
-                                                        //response = httpRequest.Get("https://business.facebook.com/business/loginpage/?next=https%3A%2F%2Fbusiness.facebook.com%2F%3Fnav_ref%3Dbiz_unified_f3_login_page_to_mbs&login_options%5B0%5D=FB&login_options%5B1%5D=IG&login_options%5B2%5D=SSO&config_ref=biz_login_tool_flavor_mbs");
-                                                        //if (response.IsOK)
-                                                        //{
-                                                        //    var responseStr_1 = response.ToString();
-                                                        //    var cooke_business = httpRequest.Cookies.ToString();
-                                                        //}
-
-                                                    }
+                                              
 
 
 
@@ -30622,7 +33546,7 @@ namespace BMD2
         {
             try
             {
-                var IDBM1 = BMLIVE[0].Split('|')[0];
+                var IDBM1 = BMLIVE[0];
                 List<string> SLBM3 = new List<string>();
                 List<string> CHITAOBM = new List<string>();
 
@@ -30667,12 +33591,12 @@ namespace BMD2
 
                 if (TAO_FULL5 == "FULL5")
                 {
-                    foreach (var ID in BMLIVE)
+                    foreach (var IDBM in BMLIVE)
                     {
 
                         try
                         {
-                            var IDBM = ID.Split('|')[0];
+                            //var IDBM = ID.Split('|')[0];
                             CHITAOBM.Add(IDBM);
 
                             if(CHITAOBM.Count >= SOLUONG_BM)
@@ -30772,95 +33696,236 @@ namespace BMD2
                                 response = httpRequest.Get(link_get2);
                                 if (response.IsOK)
                                 {
-                                    var responseStr1 = response.ToString();
-                                    int k = (int)numericUpDown5.Value;
-                                    var NAME = File.ReadAllLines("NAMEWHATAPP.txt").ToList();
-                                    Random rnd = new Random();
-                                    int indexRandom = rnd.Next(0, NAME.Count);
-                                    string name_WhatApp1 = NAME[indexRandom];
-                                    if (string.IsNullOrEmpty(name_WhatApp1))
+                                    var WA_5_1 = "";
+                                    if (cmb_ttk_5_1_WA.InvokeRequired)
                                     {
-                                        if (tb_NAME_WHATAPP.InvokeRequired)
+                                        cmb_ttk_5_1_WA.Invoke(new Action(() =>
                                         {
-                                            tb_NAME_WHATAPP.Invoke(new Action(() =>
-                                            {
-                                                name_WhatApp1 = tb_NAME_WHATAPP.Text;
-                                            }));
-
-                                        }
+                                            WA_5_1 = cmb_ttk_5_1_WA.Text;
+                                        }));
                                     }
-                                    for (int K = 0; K < k; K++)
+                                    if(WA_5_1 == "WA1")
                                     {
                                         try
                                         {
-                                            var name_WhatApp = name_WhatApp1 + $"{K + 1}";
-                                            httpRequest.AddHeader("authority", "graph.facebook.com");
-                                            httpRequest.AddHeader("accept", "*/*");
-                                            httpRequest.AddHeader("accept-language", "en-US,en;q=0.9");
-                                            httpRequest.AddHeader("origin", "https://business.facebook.com");
-                                            httpRequest.AddHeader("priority", "u=1, i");
-                                            httpRequest.AddHeader("referer", "https://business.facebook.com/");
-                                            httpRequest.AddHeader("sec-ch-ua", "\"Google Chrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\"");
-                                            httpRequest.AddHeader("sec-ch-ua-mobile", "?0");
-                                            httpRequest.AddHeader("sec-ch-ua-platform", "\"Windows\"");
-                                            httpRequest.AddHeader("sec-fetch-dest", "empty");
-                                            httpRequest.AddHeader("sec-fetch-mode", "cors");
-                                            httpRequest.AddHeader("sec-fetch-site", "same-site");
-
-
-                                            var link_get3 = $"https://graph.facebook.com/graphql?method=post&doc_id=29701466519469036&variables={{\"input\":{{\"client_mutation_id\":\"3\",\"actor_id\":\"{UID_IG}\",\"app_id\":\"1275424410903228\",\"log_session_id\":\"WBxP--1759509524586-637775013\",\"business_id\":\"{IDBM}\",\"api_account_type\":\"SELF\",\"creation_source\":\"BUSINESS_MANAGER\",\"friendly_name\":\"{name_WhatApp}\",\"timezone_id\":132,\"partner_business_id\":\"{IDBM}\",\"product\":\"SELF\"}}}}&access_token={token_EEAG}&_callFlowletID=0&_triggerFlowletID=4251&qpl_active_e2e_trace_ids=";
-
-                                            response = httpRequest.Get(link_get3);
-                                            if (response.IsOK)
+                                            var responseStr1 = response.ToString();
+                                            int k = (int)numericUpDown5.Value;
+                                            var NAME = File.ReadAllLines("NAMEWHATAPP.txt").ToList();
+                                            Random rnd = new Random();
+                                            int indexRandom = rnd.Next(0, NAME.Count);
+                                            string name_WhatApp1 = NAME[indexRandom];
+                                            if (string.IsNullOrEmpty(name_WhatApp1))
                                             {
-                                                var responseStr2 = response.ToString();
-                                                if (responseStr2.Contains("message\":\"Rate limit exceeded"))
+                                                if (tb_NAME_WHATAPP.InvokeRequired)
                                                 {
-                                                    if (rtb_status_kick.InvokeRequired)
+                                                    tb_NAME_WHATAPP.Invoke(new Action(() =>
                                                     {
-                                                        rtb_status_kick.Invoke(new Action(() =>
-                                                        {
-                                                            rtb_status_kick.AppendText(IDBM + "|message\":\"Rate limit exceeded|=> KICK FAIL!" + Environment.NewLine);
+                                                        name_WhatApp1 = tb_NAME_WHATAPP.Text;
+                                                    }));
 
-                                                        }));
-                                                    }
-
-                                                    goto next;
                                                 }
-                                                if (responseStr2.Contains("data\":{\"xfb_create_whatsapp_business_api_account\":null}"))
-                                                {
-                                                    if (rtb_status_kick.InvokeRequired)
-                                                    {
-                                                        rtb_status_kick.Invoke(new Action(() =>
-                                                        {
-                                                            rtb_status_kick.AppendText(IDBM + "|=> SỐ LƯỢNG TẠO VƯỢT QUÁ CHO PHÉP" + Environment.NewLine);
-
-                                                        }));
-                                                    }
-                                                    goto next;
-                                                }
-                                                else
-                                                {
-                                                    if (rtb_status_kick.InvokeRequired)
-                                                    {
-                                                        rtb_status_kick.Invoke(new Action(() =>
-                                                        {
-                                                            rtb_status_kick.AppendText(IDBM + $"|=> TẠO DONE {name_WhatApp}" + Environment.NewLine);
-
-                                                        }));
-                                                    }
-                                                }
-
-
-
-
                                             }
+                                            for (int K = 0; K < k; K++)
+                                            {
+                                                try
+                                                {
+                                                    var name_WhatApp = name_WhatApp1 + $"{K + 1}";
+                                                    httpRequest.AddHeader("authority", "graph.facebook.com");
+                                                    httpRequest.AddHeader("accept", "*/*");
+                                                    httpRequest.AddHeader("accept-language", "en-US,en;q=0.9");
+                                                    httpRequest.AddHeader("origin", "https://business.facebook.com");
+                                                    httpRequest.AddHeader("priority", "u=1, i");
+                                                    httpRequest.AddHeader("referer", "https://business.facebook.com/");
+                                                    httpRequest.AddHeader("sec-ch-ua", "\"Google Chrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\"");
+                                                    httpRequest.AddHeader("sec-ch-ua-mobile", "?0");
+                                                    httpRequest.AddHeader("sec-ch-ua-platform", "\"Windows\"");
+                                                    httpRequest.AddHeader("sec-fetch-dest", "empty");
+                                                    httpRequest.AddHeader("sec-fetch-mode", "cors");
+                                                    httpRequest.AddHeader("sec-fetch-site", "same-site");
 
+
+                                                    var link_get3 = $"https://graph.facebook.com/graphql?method=post&doc_id=29701466519469036&variables={{\"input\":{{\"client_mutation_id\":\"3\",\"actor_id\":\"{UID_IG}\",\"app_id\":\"1275424410903228\",\"log_session_id\":\"WBxP--1759509524586-637775013\",\"business_id\":\"{IDBM}\",\"api_account_type\":\"SELF\",\"creation_source\":\"BUSINESS_MANAGER\",\"friendly_name\":\"{name_WhatApp}\",\"timezone_id\":132,\"partner_business_id\":\"{IDBM}\",\"product\":\"SELF\"}}}}&access_token={token_EEAG}&_callFlowletID=0&_triggerFlowletID=4251&qpl_active_e2e_trace_ids=";
+
+                                                    response = httpRequest.Get(link_get3);
+                                                    if (response.IsOK)
+                                                    {
+                                                        var responseStr2 = response.ToString();
+                                                        if (responseStr2.Contains("message\":\"Rate limit exceeded"))
+                                                        {
+                                                            if (rtb_status_kick.InvokeRequired)
+                                                            {
+                                                                rtb_status_kick.Invoke(new Action(() =>
+                                                                {
+                                                                    rtb_status_kick.AppendText(IDBM + "|message\":\"Rate limit exceeded|=> KICK FAIL!" + Environment.NewLine);
+
+                                                                }));
+                                                            }
+
+                                                            goto next;
+                                                        }
+                                                        if (responseStr2.Contains("data\":{\"xfb_create_whatsapp_business_api_account\":null}"))
+                                                        {
+                                                            if (rtb_status_kick.InvokeRequired)
+                                                            {
+                                                                rtb_status_kick.Invoke(new Action(() =>
+                                                                {
+                                                                    rtb_status_kick.AppendText(IDBM + "|=> SỐ LƯỢNG TẠO VƯỢT QUÁ CHO PHÉP" + Environment.NewLine);
+
+                                                                }));
+                                                            }
+                                                            goto next;
+                                                        }
+                                                        else
+                                                        {
+                                                            if (rtb_status_kick.InvokeRequired)
+                                                            {
+                                                                rtb_status_kick.Invoke(new Action(() =>
+                                                                {
+                                                                    rtb_status_kick.AppendText(IDBM + $"|=> TẠO DONE {name_WhatApp}" + Environment.NewLine);
+
+                                                                }));
+                                                            }
+                                                        }
+
+
+
+
+                                                    }
+
+                                                }
+                                                catch { }
+                                                int delay = (int)delay_kick_bm3.Value;
+                                                Thread.Sleep(TimeSpan.FromSeconds(delay));
+                                            }
                                         }
                                         catch { }
-                                        int delay = (int)delay_kick_bm3.Value;
-                                        Thread.Sleep(TimeSpan.FromSeconds(delay));
                                     }
+                                    else 
+                                    {
+                                        try
+                                        {
+                                            Task.Run(async () =>
+                                            {
+                                                int k = (int)numericUpDown5.Value;
+                                                var NAME = File.ReadAllLines("NAMEWHATAPP.txt").ToList();
+                                                Random rnd = new Random();
+                                                int indexRandom = rnd.Next(0, NAME.Count);
+                                                string name_WhatApp1 = NAME[indexRandom];
+                                                if (string.IsNullOrEmpty(name_WhatApp1))
+                                                {
+                                                    if (tb_NAME_WHATAPP.InvokeRequired)
+                                                    {
+                                                        tb_NAME_WHATAPP.Invoke(new Action(() =>
+                                                        {
+                                                            name_WhatApp1 = tb_NAME_WHATAPP.Text;
+                                                        }));
+
+                                                    }
+                                                    else
+                                                    {
+                                                        name_WhatApp1 = tb_NAME_WHATAPP.Text;
+                                                    }
+                                                }
+                                                SemaphoreSlim sem = new SemaphoreSlim(k);
+                                                List<Task> tasks = new List<Task>();
+
+                                                for (int i = 0; i < k; i++)
+                                                {
+                                                    await sem.WaitAsync();
+
+                                                    int index = i;
+                                                    var task = Task.Run(async () =>
+                                                    {
+                                                        try
+                                                        {
+                                                            // ... toàn bộ code tạo tài khoản ở đây ...
+
+                                                            var name_WhatApp = name_WhatApp1 + $"{i + 1}";
+                                                            httpRequest.AddHeader("authority", "graph.facebook.com");
+                                                            httpRequest.AddHeader("accept", "*/*");
+                                                            httpRequest.AddHeader("accept-language", "en-US,en;q=0.9");
+                                                            httpRequest.AddHeader("origin", "https://business.facebook.com");
+                                                            httpRequest.AddHeader("priority", "u=1, i");
+                                                            httpRequest.AddHeader("referer", "https://business.facebook.com/");
+                                                            httpRequest.AddHeader("sec-ch-ua", "\"Google Chrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\"");
+                                                            httpRequest.AddHeader("sec-ch-ua-mobile", "?0");
+                                                            httpRequest.AddHeader("sec-ch-ua-platform", "\"Windows\"");
+                                                            httpRequest.AddHeader("sec-fetch-dest", "empty");
+                                                            httpRequest.AddHeader("sec-fetch-mode", "cors");
+                                                            httpRequest.AddHeader("sec-fetch-site", "same-site");
+
+
+                                                            var link_get3 = $"https://graph.facebook.com/graphql?method=post&doc_id=29701466519469036&variables={{\"input\":{{\"client_mutation_id\":\"3\",\"actor_id\":\"{UID_IG}\",\"app_id\":\"1275424410903228\",\"log_session_id\":\"WBxP--1759509524586-637775013\",\"business_id\":\"{IDBM}\",\"api_account_type\":\"SELF\",\"creation_source\":\"BUSINESS_MANAGER\",\"friendly_name\":\"{name_WhatApp}\",\"timezone_id\":132,\"partner_business_id\":\"{IDBM}\",\"product\":\"SELF\"}}}}&access_token={token_EEAG}&_callFlowletID=0&_triggerFlowletID=4251&qpl_active_e2e_trace_ids=";
+
+                                                            response = httpRequest.Get(link_get3);
+                                                            if (response.IsOK)
+                                                            {
+                                                                var responseStr2 = response.ToString();
+                                                                if (responseStr2.Contains("message\":\"Rate limit exceeded"))
+                                                                {
+                                                                    if (rtb_status_kick.InvokeRequired)
+                                                                    {
+                                                                        rtb_status_kick.Invoke(new Action(() =>
+                                                                        {
+                                                                            rtb_status_kick.AppendText(IDBM + "|message\":\"Rate limit exceeded|=> KICK FAIL!" + Environment.NewLine);
+
+                                                                        }));
+                                                                    }
+
+
+                                                                }
+                                                                if (responseStr2.Contains("data\":{\"xfb_create_whatsapp_business_api_account\":null}"))
+                                                                {
+                                                                    if (rtb_status_kick.InvokeRequired)
+                                                                    {
+                                                                        rtb_status_kick.Invoke(new Action(() =>
+                                                                        {
+                                                                            rtb_status_kick.AppendText(IDBM + "|=> SỐ LƯỢNG TẠO VƯỢT QUÁ CHO PHÉP" + Environment.NewLine);
+
+                                                                        }));
+                                                                    }
+
+                                                                }
+                                                                else
+                                                                {
+                                                                    if (rtb_status_kick.InvokeRequired)
+                                                                    {
+                                                                        rtb_status_kick.Invoke(new Action(() =>
+                                                                        {
+                                                                            rtb_status_kick.AppendText(IDBM + $"|=> TẠO DONE {name_WhatApp}" + Environment.NewLine);
+
+                                                                        }));
+                                                                    }
+                                                                }
+
+
+
+
+                                                            }
+
+                                                        }
+                                                        finally
+                                                        {
+                                                            int delay = (int)delay_kick_bm3.Value;
+                                                            await Task.Delay(TimeSpan.FromSeconds(delay));
+                                                            sem.Release();
+                                                        }
+                                                    });
+
+                                                    tasks.Add(task);
+                                                }
+
+                                                await Task.WhenAll(tasks);
+                                            });
+                                        }
+                                        catch { }
+                                    }
+                                
+                            
+
+                             
+                                 
+
 
                                 }
 
@@ -36897,8 +39962,8 @@ namespace BMD2
                                     var LOAIBM = "";
                                     if (mailsahre_idbm.Contains("_bv"))
                                     {
-
-                                        LOAIBM = "BM350V";
+                                        LOAIBM = "BM50";
+                                        // LOAIBM = "BM350V";
                                         goto next;
                                     }
                                     if (mailsahre_idbm.Contains("_bx"))
@@ -36954,8 +40019,8 @@ namespace BMD2
                                     var LOAIBM = "";
                                     if (mailsahre_idbm.Contains("_bv"))
                                     {
-
-                                        LOAIBM = "BM350V";
+                                        LOAIBM = "BM50";
+                                        //LOAIBM = "BM350V";
                                         goto next;
                                     }
                                     if (mailsahre_idbm.Contains("_bx"))
@@ -37005,7 +40070,7 @@ namespace BMD2
 
                     }
 
-                    client.Disconnect(true);
+                   // client.Disconnect(true);
                 }
                 //appendLog(countReadLink + " Link được tìm thấy " + mail);
             }
@@ -39954,6 +43019,6 @@ namespace BMD2
             }
         }
 
-     
+        
     }
 }
